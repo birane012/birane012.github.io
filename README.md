@@ -1,6 +1,6 @@
-### $${\color{green} b012_data is a Flutter package for data manipulations. It create an sqlite database for your app, generate all your entity tables and ensure their CRUD (create, read, update and delete) on the SQLite database with bunch of generic methods. It also provide system file manipulation for files of type text and binaries (Videos, audio,images, pdf, etc.). B012_data store or reload them as file, string, base64 string or Unit8List.}$$
+## <span style="color:green"> b012_data is a Flutter package for data manipulations. It create an sqlite database for your app, generate all your entity tables and ensure their CRUD (create, read, update and delete) on the SQLite database with bunch of generic methods. It also provide system file manipulation for files of type text and binaries (Videos, audio,images, pdf, etc.). B012_data store or reload them as file, string, base64 string or Unit8List.</span>
 
-<a href="https://pub.dev/packages/b012_data"> Clic here to get B012_data dependency for your flutter project. </a>
+[Clic here to get B012_data dependency for your flutter project.](https://pub.dev/packages/b012_data)
 
 ### For a class to consider like a B012_data entity, it must these five steps below :
 
