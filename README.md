@@ -142,5 +142,5 @@
        //To load that image as bytes array :
        Uint8List readTestImageAsBytes=await DiscData.instance.getEntityFileOnDisc<Uint8List, Images>('imageName','imageID',1);
 
-       runApp(Container());
+       runApp(Container()); 
     }
