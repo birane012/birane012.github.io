@@ -3,7 +3,7 @@
 
 [Clic here to get B012_data dependency for your flutter project.](https://pub.dev/packages/b012_data)
 
-### For a class to consider like a B012_data entity, it must these five steps below :
+### For a class to consider like a B012_data entity, it must respect these five steps below :
 
     import 'package:b012_data/b012_disc_data.dart';
     import 'package:flutter/material.dart';
