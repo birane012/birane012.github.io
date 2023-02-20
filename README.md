@@ -59,7 +59,7 @@
     /////////// DataAccess.instance /////////////
 
     //Show create table query of Person entity
-    DataAccess.instance.showCreateTable(Person());
+    debugPrint(DataAccess.instance.showCreateTable(Person()));
     
     //Check if the Person table exists in the database
     bool witnessPersTableExiste= await DataAccess.instance.checkIfEntityTableExists<Person>();
