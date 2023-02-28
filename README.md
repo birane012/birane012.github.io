@@ -183,3 +183,4 @@
     
         Images fromMap(dynamic jsonOrMap) => Images.fromMap(jsonOrMap);
     }
+    
