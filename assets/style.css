@@ -1175,7 +1175,7 @@ code[class*="language-"], pre[class*="language-"] {
 /* ---------- footer ---------- */
 .foot {
   border-top: 1px solid var(--rule);
-  background: #0B0A08;
+  background: var(--bg-2);
 }
 .foot__inner {
   max-width: var(--maxw);
