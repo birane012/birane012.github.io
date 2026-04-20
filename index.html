@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>b012_data — Object–Relational Mapping for Flutter, the Spring Boot way.</title>
+  <meta name="description" content="A Flutter ORM package inspired by Spring Boot. Declare a plain Dart class and get every CRUD operation on a local SQLite database — no hand-written SQL, no boilerplate." />
+  <meta name="theme-color" content="#0E0D0B" />
+
+  <meta property="og:title" content="b012_data — Flutter ORM, Spring Boot style" />
+  <meta property="og:description" content="Declare a plain Dart class and b012_data generates every CRUD operation on a local SQLite database." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://birane012.github.io" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" id="prism-base" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="b012_data home">
+        <span class="brand__bracket">&lt;</span><span class="brand__name">b012_data</span><span class="brand__bracket">&gt;</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#install">Install</a>
+        <a href="#entity">Entities</a>
+        <a href="#crud">CRUD</a>
+        <a href="#disc">Files</a>
+        <a href="#notes">Notes</a>
+      </nav>
+      <div class="topbar__actions">
+        <div class="topbar__prefs">
+          <select id="locale-select" class="topbar__select" aria-label="Language">
+            <option value="auto">Language</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="ru">Русский</option>
+            <option value="zh-Hans">简体中文</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ar">العربية</option>
+            <option value="tr">Türkçe</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="it">Italiano</option>
+            <option value="nl">Nederlands</option>
+            <option value="pl">Polski</option>
+            <option value="bn">বাংলা</option>
+            <option value="ur">اردو</option>
+          </select>
+          <select id="theme-select" class="topbar__select" aria-label="Theme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="nature">Nature</option>
+          </select>
+        </div>
+        <a class="btn btn--ghost" href="https://pub.dev/packages/b012_data" target="_blank" rel="noopener">pub.dev &#x2197;</a>
+        <a class="btn btn--solid" href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">GitHub &#x2197;</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <section class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__left">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            <span>Flutter package</span>
+            <span class="eyebrow__sep">&mdash;</span>
+            <span>v2.0.3</span>
+          </div>
+
+          <h1 class="hero__title">
+            <strong class="hero__package">b012_data</strong>,
+            <span class="hero__title-main">Object&ndash;Relational&nbsp;Mapping,</span>
+            <em class="hero__title-tail">the Spring&nbsp;Boot way for flutter.</em>
+          </h1>
+
+          <p class="hero__lede">
+            <strong>b012_data</strong> turns a plain Dart class into a persistent entity.
+            CRUD statements, transactions, projections, file&nbsp;I/O &mdash; all generated
+            from six simple conventions. No hand-written SQL. No repository boilerplate.
+            Just Dart.
+          </p>
+
+          <div class="install">
+            <div class="install__label">
+              <span class="install__hash">$</span>
+              <span>add to <code>pubspec.yaml</code></span>
+            </div>
+            <div class="install__cmd" data-copy="b012_data: ^2.0.3">
+              <code><span class="tok-key">b012_data</span><span class="tok-punct">:</span> <span class="tok-ver">^2.0.3</span></code>
+              <button class="copy-btn" type="button" aria-label="Copy">Copy</button>
+            </div>
+          </div>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#install">Read the guide &rarr;</a>
+            <a class="btn btn--ghost" href="#entity">Declare an entity</a>
+          </div>
+
+          <ul class="hero__meta" aria-label="Package highlights">
+            <li><span class="num">01</span><span>Zero SQL to maintain</span></li>
+            <li><span class="num">02</span><span>5 platforms, one API</span></li>
+            <li><span class="num">03</span><span>Metadata in SQLite, blobs on disk</span></li>
+          </ul>
+        </div>
+
+        <aside class="hero__right" aria-label="Example entity">
+          <div class="panel">
+            <div class="panel__header">
+              <div class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="panel__file">person.dart</div>
+              <div class="panel__tag">entity</div>
+            </div>
+<pre class="panel__code"><code class="language-dart">class Person {
+  String? idPers;
+  String? firstName;
+  String? lastName;
+  bool? sex;
+  DateTime? dateOfBirth;
+
+  // Primary key, foreign keys, nullability &mdash; all
+  // declared as plain Dart getters.
+  MapEntry&lt;String, bool&gt; get pKeyAuto =&gt;
+      const MapEntry('idPers', false);
+
+  List&lt;String&gt; get notNulls =&gt;
+      ['firstName', 'lastName', 'sex', 'dateOfBirth'];
+
+  Person([this.idPers, this.firstName, this.lastName,
+          this.sex, this.dateOfBirth]);
+
+  Map&lt;String, dynamic&gt; toMap() =&gt; {
+    'idPers': idPers ?? ColumnType.String,
+    'firstName': firstName ?? ColumnType.String,
+    'lastName': lastName ?? ColumnType.String,
+    'sex': sex ?? ColumnType.bool,
+    'dateOfBirth': dateOfBirth ?? ColumnType.DateTime,
+  };
+
+  Person.fromMap(Map&lt;String, Object?&gt; json, {bool isInt = true}) {
+    idPers = json['idPers'] as String?;
+    firstName = json['firstName'] as String?;
+    lastName = json['lastName'] as String?;
+    sex = boolean(json['sex'], isInt: isInt);
+    dateOfBirth = dateTime(json['dateOfBirth'] as String?);
+  }
+
+  Person fromMap(Map&lt;String, Object?&gt; json) =&gt; Person.fromMap(json);
+}</code></pre>
+            <div class="panel__footer">
+              <span>&ldquo;Six well-known members, and your class is persistent.&rdquo;</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>ANDROID</span><span class="dot-sep"></span>
+          <span>iOS</span><span class="dot-sep"></span>
+          <span>macOS</span><span class="dot-sep"></span>
+          <span>LINUX</span><span class="dot-sep"></span>
+          <span>WINDOWS</span><span class="dot-sep"></span>
+          <span>sqflite</span><span class="dot-sep"></span>
+          <span>sqflite_common_ffi</span><span class="dot-sep"></span>
+          <span>ANDROID</span><span class="dot-sep"></span>
+          <span>iOS</span><span class="dot-sep"></span>
+          <span>macOS</span><span class="dot-sep"></span>
+          <span>LINUX</span><span class="dot-sep"></span>
+          <span>WINDOWS</span><span class="dot-sep"></span>
+          <span>sqflite</span><span class="dot-sep"></span>
+          <span>sqflite_common_ffi</span><span class="dot-sep"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section" id="features" aria-label="Features">
+      <div class="section__head">
+        <div class="section__kicker">&sect; 00 &middot; Overview</div>
+        <h2 class="section__title">Four ideas. One package.</h2>
+        <p class="section__sub">b012_data keeps the surface area narrow on purpose: a class is the schema, an instance is the row, and two singletons do the rest.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <header><span class="feature__num">[01]</span><h3>Spring-style entities</h3></header>
+          <p>Declare a primary key, non-null columns, uniques, checks, defaults and foreign keys as plain getters. <code>DataAccess</code> turns them into SQL.</p>
+          <div class="feature__meta">pKeyAuto &middot; notNulls &middot; uniques &middot; fKeys</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[02]</span><h3>Every CRUD, for free</h3></header>
+          <p>Insert, bulk-insert, read-by-predicate, project single or multiple columns, update, delete, count &mdash; all typed, all generic, all transaction-aware.</p>
+          <div class="feature__meta">insertObjet &middot; get &middot; getAll &middot; update &middot; delete</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[03]</span><h3>Five platforms, one API</h3></header>
+          <p>Native <code>sqflite</code> on Android, iOS and macOS. Transparent fallback to <code>sqflite_common_ffi</code> on Linux and Windows &mdash; the same code everywhere.</p>
+          <div class="feature__meta">Android &middot; iOS &middot; macOS &middot; Linux &middot; Windows</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[04]</span><h3>Bytes on disk, metadata in SQLite</h3></header>
+          <p><code>DiscData</code> reads, writes, appends and resolves binary files as text, Base64, <code>Uint8List</code> or Flutter <code>Image</code>. Pair it with a row and you have media, solved.</p>
+          <div class="feature__meta">readFileAs* &middot; saveDataToDisc &middot; getEntityFileOnDisc</div>
+        </article>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"><span>&sect;</span></div>
+
+    <section class="layout">
+      <aside class="toc" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ol class="toc__list">
+          <li><a href="#install">01 &mdash; Installation</a></li>
+          <li><a href="#entity">02 &mdash; Declaring an entity</a></li>
+          <li><a href="#crud">03 &mdash; The CRUD walk-through</a>
+            <ol>
+              <li><a href="#crud-create">a. Create</a></li>
+              <li><a href="#crud-read">b. Read</a></li>
+              <li><a href="#crud-update">c. Update</a></li>
+              <li><a href="#crud-delete">d. Delete &amp; count</a></li>
+            </ol>
+          </li>
+          <li><a href="#disc">04 &mdash; Files on disk</a></li>
+          <li><a href="#notes">05 &mdash; Things to know</a></li>
+          <li><a href="#example">06 &mdash; Full example</a></li>
+          <li><a href="#license">07 &mdash; License</a></li>
+        </ol>
+      </aside>
+
+      <article class="docs">
+
+        <section class="doc-section section" id="install">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 01 &middot; Setup</div>
+        <h2 class="section__title">Installation</h2>
+            <p class="section__sub">Add the dependency, pull it in, and you are ready. A default database named <code>sqlf_easy.db</code> is created on first import.</p>
+          </div>
+
+          <div class="prose">
+            <p><em>Add the package to your</em> <code>pubspec.yaml</code><em>:</em></p>
+<pre><code class="language-yaml">dependencies:
+  b012_data: ^2.0.3</code></pre>
+
+            <p><em>Then run:</em></p>
+<pre><code class="language-bash">flutter pub get</code></pre>
+
+            <aside class="callout callout--note">
+              <div class="callout__label">Note &mdash; default database</div>
+              <p>As soon as <code>b012_data</code> is imported, a database called <code>sqlf_easy.db</code> is created automatically in the application&rsquo;s documents directory, inside the <code>databases</code> folder. Use <code>changeDB</code> if you want a different one.</p>
+            </aside>
+
+            <p>Before calling any method that needs the documents directory (<code>databasesPath</code>, <code>filesPath</code>, &hellip;), make sure the Flutter bindings are initialized:</p>
+<pre><code class="language-dart">import 'disc_example.dart' as disc;
+import 'sqlite_example.dart' as sqlite;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // SQLite CRUD walk-through (Person entity).
+  await sqlite.runSqliteDemo();
+
+  // File system / binary file walk-through (Images entity).
+  await disc.runDiscDemo();
+}</code></pre>
+          </div>
+        </section>
+
+        <section class="doc-section section" id="entity">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 02 &middot; Conventions</div>
+            <h2 class="section__title">Declaring an entity</h2>
+            <p class="section__sub">An entity is a plain Dart class that exposes six well-known members. <code>DataAccess</code> reads them once, then generates every statement it needs.</p>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <span class="steps__num">1</span>
+              <div>
+                <h4>Primary key <span class="steps__flag">required</span></h4>
+                <p>A <code>MapEntry</code> whose key is the column name and whose value is <code>true</code> to use <code>AUTOINCREMENT</code>.</p>
+<pre><code class="language-dart">MapEntry&lt;String, bool&gt; get pKeyAuto =&gt; const MapEntry('idPers', false);</code></pre>
+              </div>
+            </li>
+            <li>
+              <span class="steps__num">2</span>
+              <div>
+                <h4>Constraints <span class="steps__flag steps__flag--soft">optional</span></h4>
+                <p>Non-nullable columns, uniques, check constraints, default values and foreign keys &mdash; each expressed as a getter.</p>
+<pre><code class="language-dart">List&lt;String&gt; get notNulls  =&gt; ['firstName', 'lastName', 'sex', 'dateOfBirth'];
+// List&lt;String&gt; get uniques =&gt; ['email'];
+// Map&lt;String, String&gt; get checks   =&gt; {'email': 'length(email) &gt; 4'};
+// Map&lt;String, String&gt; get defaults =&gt; {'profession': 'NULL'};
+// Map&lt;String, List&lt;String&gt;&gt; get fKeys =&gt; {'profession': ['Profession', 'idProf']};</code></pre>
+              </div>
+            </li>
+            <li>
+              <span class="steps__num">3</span>
+              <div>
+                <h4>Unnamed constructor <span class="steps__flag">required</span></h4>
+                <p>Used by the package to instantiate an entity from the <code>fromMap</code> callback below.</p>
+<pre><code class="language-dart">Person([this.idPers, this.firstName, this.lastName, this.sex, this.dateOfBirth]);</code></pre>
+              </div>
+            </li>
+            <li>
+              <span class="steps__num">4</span>
+              <div>
+                <h4>Serialization <code>toMap</code> <span class="steps__flag">required</span></h4>
+                <p>For non-nullable fields the <code>ColumnType</code> fallback can be omitted &mdash; the value will never be null at insertion time.</p>
+<pre><code class="language-dart">Map&lt;String, dynamic&gt; toMap() =&gt; {
+  'idPers': idPers ?? ColumnType.String,
+  'firstName': firstName ?? ColumnType.String,
+  'lastName': lastName ?? ColumnType.String,
+  'sex': sex ?? ColumnType.bool,
+  'dateOfBirth': dateOfBirth ?? ColumnType.DateTime,
+};</code></pre>
+              </div>
+            </li>
+            <li>
+              <span class="steps__num">5</span>
+              <div>
+                <h4>Named <code>fromMap</code> constructor <span class="steps__flag">required</span></h4>
+                <p>Deserialization from a single SQLite row.</p>
+<pre><code class="language-dart">Person.fromMap(Map&lt;String, Object?&gt; json, {bool isInt = true}) {
+  idPers      = json['idPers']      as String?;
+  firstName   = json['firstName']   as String?;
+  lastName    = json['lastName']    as String?;
+  sex         = boolean(json['sex'], isInt: isInt);
+  dateOfBirth = dateTime(json['dateOfBirth'] as String?);
+}</code></pre>
+              </div>
+            </li>
+            <li>
+              <span class="steps__num">6</span>
+              <div>
+                <h4>Instance-side <code>fromMap</code> <span class="steps__flag">required</span></h4>
+                <p>Wraps the named constructor so generic getters can call it off any instance.</p>
+<pre><code class="language-dart">Person fromMap(Map&lt;String, Object?&gt; json) =&gt; Person.fromMap(json);</code></pre>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="doc-section section" id="crud">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 03 &middot; Runtime</div>
+            <h2 class="section__title">The CRUD walk-through</h2>
+            <p class="section__sub">Every call below is the high-level equivalent of a Spring Data JPA repository method, driven exclusively through <code>DataAccess.instance</code> &mdash; no SQL string is ever written by hand.</p>
+          </div>
+
+          <div class="prose">
+            <p>Start by inspecting the schema that will be generated from your entity, then check whether the table already exists:</p>
+<pre><code class="language-dart">// Inspect the CREATE TABLE statement generated for the Person entity.
+debugPrint('${DataAccess.instance.showCreateTable(Person())}\n\n');
+
+// Does the Person table already exist in the database?
+final bool personTableExists =
+    await DataAccess.instance.checkIfEntityTableExists&lt;Person&gt;();
+debugPrint('Person table exists? $personTableExists\n');</code></pre>
+          </div>
+
+          <section class="subsection" id="crud-create">
+            <div class="subsection__label">a. Create</div>
+            <h3>Single row, then a whole list &mdash; inside one transaction.</h3>
+            <p><code>insertObjet</code> inserts a single entity. <code>insertObjetList</code> wraps a list of entities into a single atomic transaction. Both return a <code>bool</code>.</p>
+<pre><code class="language-dart">// CREATE &mdash; insert a single Person row.
+final bool inserted = await DataAccess.instance.insertObjet(
+  Person(newKey, 'KEBE', 'Birane', true, DateTime(2000, 8, 5)),
+);
+
+// CREATE (bulk) &mdash; insert several Persons inside a single transaction.
+final bool personsListInserted =
+    await DataAccess.instance.insertObjetList(&lt;Person&gt;[
+  Person(newKey, 'Mbaye', 'Aliou', true, DateTime(1999, 5, 1)),
+  Person(newKey, 'Cisse', 'Fatou', false, DateTime(2000, 7, 9)),
+]);</code></pre>
+          </section>
+
+          <section class="subsection" id="crud-read">
+            <div class="subsection__label">b. Read</div>
+            <h3>One row, many rows, a single column, or several columns.</h3>
+            <p>Predicates are plain SQL strings passed as <code>afterWhere</code>. Booleans are converted to <code>0</code>/<code>1</code> for SQLite automatically, so <code>sex = true</code> is equivalent to <code>sex = 1</code>.</p>
+<pre><code class="language-dart">// READ &mdash; fetch a single row matching an SQL predicate.
+final Person? birane = await DataAccess.instance.get&lt;Person&gt;(
+  Person(),
+  "firstName = 'Birane' AND lastName = 'KEBE'",
+);
+
+// READ &mdash; fetch every row.
+final List&lt;Person&gt;? everyone =
+    await DataAccess.instance.getAll&lt;Person&gt;(Person());
+
+// READ &mdash; fetch rows matching a predicate.
+final List&lt;Person&gt;? men = await DataAccess.instance.getAllSorted&lt;Person&gt;(
+  Person(),
+  'sex = true',
+);</code></pre>
+
+            <p class="muted-h">Projection &mdash; single column or a set of columns:</p>
+<pre><code class="language-dart">// READ (projection) &mdash; pull a single column across the whole table.
+final List&lt;String&gt; firstNames =
+    await DataAccess.instance.getAColumnFrom&lt;String, Person&gt;('firstName');
+
+final List&lt;String&gt; womenFirstNames = await DataAccess.instance
+    .getAColumnFrom&lt;String, Person&gt;('firstName', afterWhere: 'sex = false');
+
+// READ (projection) &mdash; pull several columns at once.
+final List&lt;Map&lt;String, Object?&gt;&gt; nameRows = await DataAccess.instance
+    .updateSomeColumnsOf&lt;Person&gt;('firstName, lastName');
+
+final List&lt;Map&lt;String, Object?&gt;&gt; womenNameRows =
+    await DataAccess.instance.updateSomeColumnsOf&lt;Person&gt;(
+  'firstName, lastName',
+  afterWhere: 'sex = 0',
+);</code></pre>
+          </section>
+
+          <section class="subsection" id="crud-update">
+            <div class="subsection__label">c. Update</div>
+            <h3>Values follow the order <code>columnsToUpdate</code> + <code>whereColumns</code>.</h3>
+            <p>Here: set <code>firstName&nbsp;=&nbsp;'developer'</code> and <code>lastName&nbsp;=&nbsp;'2022'</code> where <code>firstName&nbsp;=&nbsp;'Birane' AND lastName&nbsp;=&nbsp;'KEBE'</code>.</p>
+<pre><code class="language-dart">final bool updated = await DataAccess.instance.updateSomeColumnsOf&lt;Person&gt;(
+  &lt;String&gt;['firstName', 'lastName'],
+  &lt;String&gt;['firstName', 'lastName'],
+  &lt;Object&gt;['developer', '2022', 'Birane', 'KEBE'],
+);</code></pre>
+          </section>
+
+          <section class="subsection" id="crud-delete">
+            <div class="subsection__label">d. Delete &amp; count</div>
+            <h3>Remove rows matching a predicate, then count what&rsquo;s left.</h3>
+<pre><code class="language-dart">// DELETE &mdash; remove every row matching the predicate.
+final bool deletedFatou = await DataAccess.instance.deleteObjet&lt;Person&gt;(
+  "firstName = 'Fatou'",
+);
+
+// COUNT &mdash; total rows and filtered rows.
+final int total = await DataAccess.instance.countElementsOf&lt;Person&gt;();
+final int males = await DataAccess.instance.countElementsOf&lt;Person&gt;(
+  afterWhere: 'sex = true',
+);</code></pre>
+
+            <aside class="callout callout--warn">
+              <div class="callout__label">Caution &mdash; destructive call</div>
+              <p>The following instruction drops the data of every table in <code>sqlf_easy.db</code>. Tables stay, rows are removed.</p>
+<pre><code class="language-dart">await DataAccess.instance.cleanAllTablesData();</code></pre>
+            </aside>
+          </section>
+        </section>
+
+        <section class="doc-section section" id="disc">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 04 &middot; Disk</div>
+            <h2 class="section__title">Files on disk</h2>
+            <p class="section__sub">The <code>DiscData</code> singleton reads, writes, appends and checks files. It returns text, Base64, <code>Uint8List</code> or a Flutter <code>Image</code> widget &mdash; and it can resolve a file name stored in SQLite back to raw bytes.</p>
+          </div>
+
+          <div class="prose">
+            <p>The pattern is simple: keep metadata (ids, timestamps, names) in SQLite, keep the binary blob on disk, and resolve one from the other with a single call.</p>
+<pre><code class="language-dart">class Images {
+  String? imageID;
+  String? imageName;
+  DateTime? dateSave;
+  DateTime? dateLastUpdate;
+
+  MapEntry&lt;String, bool&gt; get pKeyAuto =&gt; const MapEntry('imageID', false);
+
+  List&lt;String&gt; get notNulls =&gt;
+      const ['imageName', 'dateSave', 'dateLastUpdate'];
+
+  Images([this.imageID, this.imageName, this.dateSave, this.dateLastUpdate]);
+
+  Map&lt;String, dynamic&gt; toMap() =&gt; {
+    'imageID':        imageID        ?? ColumnType.String,
+    'imageName':      imageName      ?? ColumnType.String,
+    'dateSave':       dateSave       ?? ColumnType.DateTime,
+    'dateLastUpdate': dateLastUpdate ?? ColumnType.DateTime,
+  };
+
+  Images.fromMap(Map&lt;String, Object?&gt; json, {bool isInt = true}) {
+    imageID        = json['imageID']   as String?;
+    imageName      = json['imageName'] as String?;
+    dateSave       = dateTime(json['dateSave']       as String?);
+    dateLastUpdate = dateTime(json['dateLastUpdate'] as String?);
+  }
+
+  Images fromMap(Map&lt;String, Object?&gt; json) =&gt; Images.fromMap(json);
+}</code></pre>
+          </div>
+
+          <section class="subsection">
+            <div class="subsection__label">a. System paths</div>
+            <h3>Three directories exposed by the package.</h3>
+<pre><code class="language-dart">final String databasesPath = await DiscData.instance.databasesPath; // SQLite files
+final String filesPath     = await DiscData.instance.filesPath;     // user files
+final String rootPath      = await DiscData.instance.rootPath;      // documents dir</code></pre>
+          </section>
+
+          <section class="subsection">
+            <div class="subsection__label">b. Write</div>
+            <h3>One call writes text, Base64 or raw bytes.</h3>
+<pre><code class="language-dart">// Save a text file into the default `files` directory.
+final String? savedName = await DiscData.instance.saveDataToDisc(
+  'contents of test.txt',
+  DataType.text,
+  takeThisName: 'test.txt',
+);
+
+// Save an Image (Base64) to the default `files` directory.
+final String? testImage = await DiscData.instance.saveDataToDisc(
+  testImageAsBase64,
+  DataType.base64,
+  takeThisName: 'testImage.png',
+);
+
+// Store a matching metadata row for that image.
+final bool imageRecordCreated = await DataAccess.instance.insertObjet(
+  Images('img0001', 'testImage.png', DateTime.now(), DateTime.now()),
+);</code></pre>
+          </section>
+
+          <section class="subsection">
+            <div class="subsection__label">c. Read</div>
+            <h3>As a string, Base64, bytes &mdash; or a Flutter widget.</h3>
+<pre><code class="language-dart">// Exists?
+final bool exists = await DiscData.instance.checkFileExists(fileName: 'test.txt');
+
+// As a UTF-8 string.
+final String? asString = await DiscData.instance.readFileAsString(fileName: 'test.txt');
+
+// As Base64 &mdash; handy to ship blobs over JSON.
+final String? asBase64 = await DiscData.instance.readFileAsBase64(fileName: 'testImage.png');
+
+// As raw bytes &mdash; images, audio, video, PDFs, anything binary.
+final Uint8List? asBytes = await DiscData.instance.readFileAsBytes(fileName: 'testImage.png');
+
+// Straight into a Flutter `Image` widget.
+final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'testImage.png');</code></pre>
+          </section>
+
+          <section class="subsection">
+            <div class="subsection__label">d. Database-backed resolution</div>
+            <h3>Metadata in SQLite, blobs on disk, one call to bind them.</h3>
+            <p>Given a table <code>Images</code> with a column <code>imageName</code> that holds a file name on disk, fetch the raw bytes of the row where <code>imageID&nbsp;=&nbsp;'img0001'</code>:</p>
+<pre><code class="language-dart">final Uint8List? entityBytes = await DiscData.instance
+    .getEntityFileOnDisc&lt;Uint8List, Images&gt;(
+        'imageName', 'imageID', 'img0001');</code></pre>
+          </section>
+        </section>
+
+        <section class="doc-section section" id="notes">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 05 &middot; Edge cases</div>
+            <h2 class="section__title">Things to know</h2>
+            <p class="section__sub">Two subtleties that save debugging time later.</p>
+          </div>
+
+          <div class="notes">
+            <article class="note">
+              <div class="note__num">01</div>
+              <div class="note__body">
+                <h4>Missing-table exceptions</h4>
+                <p>Most entity-oriented methods throw <code>DatabaseException('no such table: &hellip;')</code> when the underlying table does not exist. The exceptions are <code>updateWholeObject</code>, <code>updateSomeColumnsOf</code>, <code>getAColumnFromWithTableName</code> and <code>getAColumnFrom</code>, which catch the error and only log it via <code>debugPrint</code>. Wrap the other methods in <code>try</code>/<code>catch</code> if you are not sure the table already exists.</p>
+              </div>
+            </article>
+            <article class="note">
+              <div class="note__num">02</div>
+              <div class="note__body">
+                <h4>Dart map vs. SQLite-ready map</h4>
+                <p><code>insertObjet</code> and <code>insertObjetList</code> internally convert your entity map using <code>mapToUse(entity.toMap())</code>. Call <code>mapToUse(entity.toMap(), forDB: false)</code> yourself when you want a plain Dart map (for JSON serialization or display) instead of an SQLite-ready one.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="doc-section section" id="example">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 06 &middot; Sandbox</div>
+            <h2 class="section__title">Full worked example</h2>
+            <p class="section__sub">The <a class="ext-link" href="https://github.com/birane012/b012_data/tree/master/example" target="_blank" rel="noopener"><code>example/</code></a> folder splits the two concerns into self-contained, runnable files so each API can be explored in isolation.</p>
+          </div>
+
+          <ul class="files">
+            <li>
+              <div class="files__head">
+                <a class="files__path ext-link" href="https://github.com/birane012/b012_data/blob/master/example/sqlite_example.dart" target="_blank" rel="noopener">example/sqlite_example.dart</a>
+                <span class="files__pill">SQLite CRUD</span>
+              </div>
+              <p>Spring Boot-style walk-through built around the <code>Person</code> entity and <code>DataAccess.instance</code>.</p>
+              <code class="files__run">flutter run -t example/sqlite_example.dart</code>
+            </li>
+            <li>
+              <div class="files__head">
+                <a class="files__path ext-link" href="https://github.com/birane012/b012_data/blob/master/example/disc_example.dart" target="_blank" rel="noopener">example/disc_example.dart</a>
+                <span class="files__pill">File system</span>
+              </div>
+              <p>Binary files (text, Base64, raw bytes, <code>Image</code>) built around <code>DiscData.instance</code> and the <code>Images</code> entity.</p>
+              <code class="files__run">flutter run -t example/disc_example.dart</code>
+            </li>
+            <li>
+              <div class="files__head">
+                <a class="files__path ext-link" href="https://github.com/birane012/b012_data/blob/master/example/main.dart" target="_blank" rel="noopener">example/main.dart</a>
+                <span class="files__pill">Entry point</span>
+              </div>
+              <p>Runs both demos in sequence.</p>
+              <code class="files__run">flutter run -t example/main.dart</code>
+            </li>
+          </ul>
+        </section>
+
+      </article>
+    </section>
+
+    <section class="platforms section" aria-label="Supported platforms">
+      <div class="section__head section__head--center">
+        <div class="section__kicker">&sect; 07 &middot; Reach</div>
+        <h2 class="section__title">One import. Five targets.</h2>
+        <p class="section__sub">Same code, everywhere Flutter runs &mdash; native SQLite on mobile, FFI on desktop.</p>
+      </div>
+
+      <ul class="plat-grid">
+        <li><span class="plat__num">A</span><span class="plat__name">Android</span><span class="plat__engine">sqflite</span></li>
+        <li><span class="plat__num">B</span><span class="plat__name">iOS</span><span class="plat__engine">sqflite</span></li>
+        <li><span class="plat__num">C</span><span class="plat__name">macOS</span><span class="plat__engine">sqflite</span></li>
+        <li><span class="plat__num">D</span><span class="plat__name">Linux</span><span class="plat__engine">sqflite&#95;common&#95;ffi</span></li>
+        <li><span class="plat__num">E</span><span class="plat__name">Windows</span><span class="plat__engine">sqflite&#95;common&#95;ffi</span></li>
+      </ul>
+    </section>
+
+    <section class="cta section" id="license">
+      <div class="cta__card">
+        <div class="cta__left">
+          <div class="section__kicker">&sect; 08 &middot; Ship it</div>
+          <h2 class="section__title">Add a line. Delete a thousand.</h2>
+          <p>Stop writing repositories, data-access objects and migration glue. Declare an entity, import the singletons, and move on to the part of your app that matters.</p>
+          <div class="cta__buttons">
+            <a class="btn btn--primary" href="https://pub.dev/packages/b012_data" target="_blank" rel="noopener">Install from pub.dev &rarr;</a>
+            <a class="btn btn--ghost" href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">Read the source</a>
+          </div>
+        </div>
+        <div class="cta__right" aria-hidden="true">
+          <div class="ascii">
+<pre>+----------------------+
+|  b012_data           |
+|  v2.0.3              |
+|----------------------|
+|  &gt; pub add b012_data |
+|  &gt; declare Entity    |
+|  &gt; DataAccess.crud() |
++----------------------+</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <div class="foot__brand">
+        <span class="brand__bracket">&lt;</span><span class="brand__name">b012_data</span><span class="brand__bracket">&gt;</span>
+        <p><code>b012_data</code> is a Flutter ORM package by <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Published under the included <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <div>
+          <h5>Package</h5>
+          <a href="https://pub.dev/packages/b012_data" target="_blank" rel="noopener">pub.dev &#x2197;</a>
+          <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">GitHub &#x2197;</a>
+        </div>
+        <div>
+          <h5>Docs</h5>
+          <a href="#install">Installation</a>
+          <a href="#entity">Entities</a>
+          <a href="#crud">CRUD</a>
+          <a href="#disc">Files</a>
+        </div>
+        <div>
+          <h5>Related</h5>
+          <a href="https://pub.dev/packages/sqflite" target="_blank" rel="noopener">sqflite &#x2197;</a>
+          <a href="https://pub.dev/packages/sqflite_common_ffi" target="_blank" rel="noopener">sqflite&#95;common&#95;ffi &#x2197;</a>
+          <a href="https://flutter.dev" target="_blank" rel="noopener">Flutter &#x2197;</a>
+        </div>
+      </nav>
+    </div>
+    <div class="foot__rule">
+      <span>&copy; <span id="year">2026</span> birane012</span>
+      <span class="foot__mark">&mdash; built with dart, coffee &amp; ink</span>
+      <span>Version 2.0.3</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
