@@ -184,7 +184,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Reach`, reachTitle: `One import. Five targets.`, reachSub: `Same code everywhere Flutter runs &mdash; native SQLite on mobile, FFI on desktop.`,
       ctaKicker: `&sect; 08 &middot; Ship it`, ctaTitle: `Add a line. Delete a thousand.`, ctaBody: `Stop writing repositories, data-access objects and migration glue. Declare an entity, import the singletons, and move on to the part of your app that matters.`,
       ctaInstall: `Install from pub.dev &rarr;`, ctaRead: `Read the source`,
-      footerBody: `<code>b012_data</code> is a Flutter ORM package by <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Published under the included <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> is a Flutter ORM package by <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Published under the included <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Package`, footerDocs: `Docs`, footerRelated: `Related`, footerDocInstall: `Installation`, footerDocEntities: `Entities`, footerDocCrud: `CRUD`, footerDocFiles: `Files`,
       footerBuilt: `&mdash; built with dart, coffee &amp; ink`, footerVersion: `Version 2.0.3`
     },
@@ -235,7 +235,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Alcance`, reachTitle: `Una importación. Cinco destinos.`, reachSub: `El mismo código donde Flutter funciona &mdash; SQLite nativo en móvil y FFI en escritorio.`,
       ctaKicker: `&sect; 08 &middot; Publica`, ctaTitle: `Añade una línea. Borra mil.`, ctaBody: `Deja de escribir repositorios, objetos de acceso a datos y pegamento de migraciones. Declara una entidad, importa los singletons y sigue con lo importante.`,
       ctaInstall: `Instalar desde pub.dev &rarr;`, ctaRead: `Ver el código fuente`,
-      footerBody: `<code>b012_data</code> es un paquete ORM para Flutter de <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Se publica bajo la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluida.`,
+      footerBody: `<code>b012_data</code> es un paquete ORM para Flutter de <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Se publica bajo la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluida.`,
       footerPackage: `Paquete`, footerDocs: `Docs`, footerRelated: `Relacionado`, footerDocInstall: `Instalación`, footerDocEntities: `Entidades`, footerDocCrud: `CRUD`, footerDocFiles: `Archivos`,
       footerBuilt: `&mdash; construido con dart, café y tinta`, footerVersion: `Versión 2.0.3`
     },
@@ -286,7 +286,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Portée`, reachTitle: `Un import. Cinq cibles.`, reachSub: `Le même code partout où Flutter tourne &mdash; SQLite native sur mobile, FFI sur desktop.`,
       ctaKicker: `&sect; 08 &middot; Expédiez`, ctaTitle: `Ajoutez une ligne. Supprimez-en mille.`, ctaBody: `Arrêtez d’écrire des repositories, des couches d’accès aux données et du code de migration. Déclarez une entité, importez les singletons, puis passez au reste.`,
       ctaInstall: `Installer depuis pub.dev &rarr;`, ctaRead: `Lire le code source`,
-      footerBody: `<code>b012_data</code> est un package ORM Flutter par <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Publié sous la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluse.`,
+      footerBody: `<code>b012_data</code> est un package ORM Flutter par <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Publié sous la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluse.`,
       footerPackage: `Package`, footerDocs: `Docs`, footerRelated: `Liens utiles`, footerDocInstall: `Installation`, footerDocEntities: `Entités`, footerDocCrud: `CRUD`, footerDocFiles: `Fichiers`,
       footerBuilt: `&mdash; conçu avec dart, café et encre`, footerVersion: `Version 2.0.3`
     },
@@ -337,7 +337,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Reichweite`, reachTitle: `Ein Import. Fünf Ziele.`, reachSub: `Derselbe Code überall dort, wo Flutter läuft &mdash; natives SQLite mobil, FFI auf dem Desktop.`,
       ctaKicker: `&sect; 08 &middot; Los geht’s`, ctaTitle: `Eine Zeile hinzufügen. Tausend löschen.`, ctaBody: `Hören Sie auf, Repositories, Data-Access-Objekte und Migrationskleber zu schreiben. Deklarieren Sie eine Entität, importieren Sie die Singletons und machen Sie mit dem wichtigen Teil Ihrer App weiter.`,
       ctaInstall: `Von pub.dev installieren &rarr;`, ctaRead: `Quellcode lesen`,
-      footerBody: `<code>b012_data</code> ist ein Flutter-ORM-Paket von <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Veröffentlicht unter der enthaltenen <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> ist ein Flutter-ORM-Paket von <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Veröffentlicht unter der enthaltenen <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Paket`, footerDocs: `Doku`, footerRelated: `Verwandt`, footerDocInstall: `Installation`, footerDocEntities: `Entitäten`, footerDocCrud: `CRUD`, footerDocFiles: `Dateien`,
       footerBuilt: `&mdash; gebaut mit dart, kaffe und tinte`, footerVersion: `Version 2.0.3`
     },
@@ -388,7 +388,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Alcance`, reachTitle: `Um import. Cinco destinos.`, reachSub: `O mesmo código onde o Flutter roda &mdash; SQLite nativo no mobile, FFI no desktop.`,
       ctaKicker: `&sect; 08 &middot; Envie`, ctaTitle: `Adicione uma linha. Apague mil.`, ctaBody: `Pare de escrever repositórios, objetos de acesso de dados e cola de migração. Declare uma entidade, importe os singletons e siga para a parte que importa.`,
       ctaInstall: `Instalar do pub.dev &rarr;`, ctaRead: `Ler o código-fonte`,
-      footerBody: `<code>b012_data</code> é um pacote ORM Flutter de <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Publicado sob a <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluída.`,
+      footerBody: `<code>b012_data</code> é um pacote ORM Flutter de <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Publicado sob a <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> incluída.`,
       footerPackage: `Pacote`, footerDocs: `Docs`, footerRelated: `Relacionado`, footerDocInstall: `Instalação`, footerDocEntities: `Entidades`, footerDocCrud: `CRUD`, footerDocFiles: `Arquivos`,
       footerBuilt: `&mdash; feito com dart, café e tinta`, footerVersion: `Versão 2.0.3`
     },
@@ -439,7 +439,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Охват`, reachTitle: `Один импорт. Пять целей.`, reachSub: `Один и тот же код везде, где работает Flutter &mdash; нативный SQLite на мобильных и FFI на десктопе.`,
       ctaKicker: `&sect; 08 &middot; В работу`, ctaTitle: `Добавьте одну строку. Удалите тысячу.`, ctaBody: `Перестаньте писать репозитории, data-access объекты и glue-код миграций. Объявите сущность, импортируйте singleton и переходите к важной части приложения.`,
       ctaInstall: `Установить с pub.dev &rarr;`, ctaRead: `Открыть исходники`,
-      footerBody: `<code>b012_data</code> — Flutter ORM пакет от <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Публикуется по включённой <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> — Flutter ORM пакет от <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Публикуется по включённой <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Пакет`, footerDocs: `Документация`, footerRelated: `Связанные`, footerDocInstall: `Установка`, footerDocEntities: `Сущности`, footerDocCrud: `CRUD`, footerDocFiles: `Файлы`,
       footerBuilt: `&mdash; сделано с dart, кофе и чернилами`, footerVersion: `Версия 2.0.3`
     },
@@ -490,7 +490,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; 覆盖范围`, reachTitle: `一次导入，五个目标。`, reachSub: `代码在 Flutter 运行的任何地方都一致 &mdash; 移动端使用原生 SQLite，桌面端使用 FFI。`,
       ctaKicker: `&sect; 08 &middot; 立即交付`, ctaTitle: `写一行，删一千行。`, ctaBody: `停止编写 Repository、数据访问对象和迁移粘合代码。声明实体，导入单例，然后专注于应用中最重要的部分。`,
       ctaInstall: `从 pub.dev 安装 &rarr;`, ctaRead: `查看源码`,
-      footerBody: `<code>b012_data</code> 是由 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a> 开发的 Flutter ORM 包。采用包含的 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> 发布。`,
+      footerBody: `<code>b012_data</code> 是由 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a> 开发的 Flutter ORM 包。采用包含的 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> 发布。`,
       footerPackage: `包`, footerDocs: `文档`, footerRelated: `相关链接`, footerDocInstall: `安装`, footerDocEntities: `实体`, footerDocCrud: `CRUD`, footerDocFiles: `文件`,
       footerBuilt: `&mdash; 使用 dart, coffee 和 ink 构建`, footerVersion: `版本 2.0.3`
     },
@@ -541,7 +541,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; 覆蓋範圍`, reachTitle: `一次匯入，五個目標。`, reachSub: `程式碼在 Flutter 運行的任何地方都一致 &mdash; 行動端使用原生 SQLite，桌面端使用 FFI。`,
       ctaKicker: `&sect; 08 &middot; 立即交付`, ctaTitle: `加一行，刪千行。`, ctaBody: `停止編寫 Repository、資料存取物件和遷移粘合程式碼。宣告實體，匯入單例，然後專注於應用程式中最重要的部分。`,
       ctaInstall: `從 pub.dev 安裝 &rarr;`, ctaRead: `閱讀原始碼`,
-      footerBody: `<code>b012_data</code> 是由 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a> 開發的 Flutter ORM 套件。採用包含的 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> 發布。`,
+      footerBody: `<code>b012_data</code> 是由 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a> 開發的 Flutter ORM 套件。採用包含的 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> 發布。`,
       footerPackage: `套件`, footerDocs: `文件`, footerRelated: `相關`, footerDocInstall: `安裝`, footerDocEntities: `實體`, footerDocCrud: `CRUD`, footerDocFiles: `檔案`,
       footerBuilt: `&mdash; 使用 dart, coffee 和 ink 構建`, footerVersion: `版本 2.0.3`
     },
@@ -592,7 +592,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; 対応範囲`, reachTitle: `1つのインポート。5つのターゲット。`, reachSub: `Flutterが動作するすべての場所で同じコードが動きます &mdash; モバイルではネイティブSQLite、デスクトップではFFIを使用。`,
       ctaKicker: `&sect; 08 &middot; 今すぐ導入`, ctaTitle: `1行追加。1000行削除。`, ctaBody: `リポジトリやデータアクセスオブジェクト、移行用コードを書くのはもうやめましょう。エンティティを宣言し、シングルトンをインポートして、アプリの重要な部分の開発に集中してください。`,
       ctaInstall: `pub.devからインストール &rarr;`, ctaRead: `ソースを読む`,
-      footerBody: `<code>b012_data</code>は、<a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>によるFlutter ORMパッケージです。同梱の<a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>の下で公開されています。`,
+      footerBody: `<code>b012_data</code>は、<a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>によるFlutter ORMパッケージです。同梱の<a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>の下で公開されています。`,
       footerPackage: `パッケージ`, footerDocs: `ドキュメント`, footerRelated: `関連リンク`, footerDocInstall: `インストール`, footerDocEntities: `エンティティ`, footerDocCrud: `CRUD`, footerDocFiles: `ファイル`,
       footerBuilt: `&mdash; dart, coffee と ink で構築`, footerVersion: `バージョン 2.0.3`
     },
@@ -643,7 +643,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; 지원 범위`, reachTitle: `한 번의 임포트. 다섯 가지 타겟.`, reachSub: `Flutter가 실행되는 모든 곳에서 동일한 코드가 작동합니다 &mdash; 모바일에서는 네이티브 SQLite, 데스크톱에서는 FFI 사용.`,
       ctaKicker: `&sect; 08 &middot; 지금 도입`, ctaTitle: `한 줄 추가. 천 줄 삭제.`, ctaBody: `리포지토리나 데이터 액세스 객체, 마이그레이션 코드를 작성하는 것은 이제 그만두세요. 엔티티를 선언하고, 싱글톤을 임포트하고, 앱의 중요한 부분 개발에 집중하세요.`,
       ctaInstall: `pub.dev에서 설치 &rarr;`, ctaRead: `소스 읽기`,
-      footerBody: `<code>b012_data</code>는 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>가 개발한 Flutter ORM 패키지입니다. 포함된 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>에 따라 게시되었습니다.`,
+      footerBody: `<code>b012_data</code>는 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>가 개발한 Flutter ORM 패키지입니다. 포함된 <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>에 따라 게시되었습니다.`,
       footerPackage: `패키지`, footerDocs: `문서`, footerRelated: `관련 링크`, footerDocInstall: `설치`, footerDocEntities: `엔티티`, footerDocCrud: `CRUD`, footerDocFiles: `파일`,
       footerBuilt: `&mdash; dart, coffee 그리고 ink로 제작`, footerVersion: `버전 2.0.3`
     },
@@ -694,7 +694,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; पहुँच`, reachTitle: `एक import. पाँच targets.`, reachSub: `वही कोड हर जगह जहाँ Flutter चलता है &mdash; मोबाइल पर नेटिव SQLite, डेस्कटॉप पर FFI।`,
       ctaKicker: `&sect; 08 &middot; शिप करें`, ctaTitle: `एक लाइन जोड़ें। हज़ार हटाएँ।`, ctaBody: `रिपॉजिटरी, डेटा-एक्सेस ऑब्जेक्ट और माइग्रेशन ग्लू लिखना बंद करें। एक एंटिटी घोषित करें, सिंगलटन इंपोर्ट करें, और अपने ऐप के उस हिस्से पर आगे बढ़ें जो मायने रखता है।`,
       ctaInstall: `Install from pub.dev &rarr;`, ctaRead: `सोर्स पढ़ें`,
-      footerBody: `<code>b012_data</code> <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a> द्वारा बनाया गया एक Flutter ORM पैकेज है। इसे शामिल किए गए <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> के तहत प्रकाशित किया गया है।`,
+      footerBody: `<code>b012_data</code> <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a> द्वारा बनाया गया एक Flutter ORM पैकेज है। इसे शामिल किए गए <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> के तहत प्रकाशित किया गया है।`,
       footerPackage: `पैकेज`, footerDocs: `डॉक्स`, footerRelated: `संबंधित`, footerDocInstall: `इंस्टॉलेशन`, footerDocEntities: `एंटिटी`, footerDocCrud: `CRUD`, footerDocFiles: `फ़ाइलें`,
       footerBuilt: `&mdash; डार्ट, कॉफी और स्याही के साथ बनाया गया`, footerVersion: `संस्करण 2.0.3`
     },
@@ -745,7 +745,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; النطاق`, reachTitle: `استيراد واحد. خمسة أهداف.`, reachSub: `نفس الكود في كل مكان يعمل فيه Flutter &mdash; SQLite أصلي على الجوال، و FFI على المكتبي.`,
       ctaKicker: `&sect; 08 &middot; اشحن تطبيقك`, ctaTitle: `أضف سطراً واحذف ألفاً.`, ctaBody: `توقف عن كتابة المستودعات وكائنات الوصول إلى البيانات وأكواد الهجرة. عرّف كياناً، واستورد الـ singletons، وانتقل إلى الجزء المهم من تطبيقك.`,
       ctaInstall: `ثبّت من pub.dev &rarr;`, ctaRead: `اقرأ المصدر`,
-      footerBody: `<code>b012_data</code> هي حزمة ORM لـ Flutter من قبل <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. منشورة تحت رخصة <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> المرفقة.`,
+      footerBody: `<code>b012_data</code> هي حزمة ORM لـ Flutter من قبل <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. منشورة تحت رخصة <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> المرفقة.`,
       footerPackage: `الحزمة`, footerDocs: `الوثائق`, footerRelated: `روابط ذات صلة`, footerDocInstall: `التثبيت`, footerDocEntities: `الكيانات`, footerDocCrud: `CRUD`, footerDocFiles: `الملفات`,
       footerBuilt: `&mdash; صُمم بـ dart والقهوة والحبر`, footerVersion: `الإصدار 2.0.3`
     },
@@ -796,7 +796,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Erişim`, reachTitle: `Tek import. Beş hedef.`, reachSub: `Flutter'ın çalıştığı her yerde aynı kod &mdash; mobilde yerel SQLite, masaüstünde FFI.`,
       ctaKicker: `&sect; 08 &middot; Gönder`, ctaTitle: `Bir satır ekle. Bin satır sil.`, ctaBody: `Depolar, veri erişim nesneleri ve geçiş yapıştırıcısı yazmayı bırakın. Bir varlık tanımlayın, singleton'ları içe aktarın ve uygulamanızın önemli olan kısmına geçin.`,
       ctaInstall: `pub.dev üzerinden kur &rarr;`, ctaRead: `Kaynağı oku`,
-      footerBody: `<code>b012_data</code>, <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a> tarafından hazırlanmış bir Flutter ORM paketidir. Birlikte verilen <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> kapsamında yayınlanmıştır.`,
+      footerBody: `<code>b012_data</code>, <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a> tarafından hazırlanmış bir Flutter ORM paketidir. Birlikte verilen <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> kapsamında yayınlanmıştır.`,
       footerPackage: `Paket`, footerDocs: `Dokümanlar`, footerRelated: `İlgili`, footerDocInstall: `Kurulum`, footerDocEntities: `Varlıklar`, footerDocCrud: `CRUD`, footerDocFiles: `Dosyalar`,
       footerBuilt: `&mdash; dart, kahve ve mürekkeple oluşturuldu`, footerVersion: `Sürüm 2.0.3`
     },
@@ -846,7 +846,7 @@ window.B012_I18N = {
       filePill3: `Entry point`, fileDesc3: `Menjalankan kedua demo secara berurutan.`,
       reachKicker: `&sect; 07 &middot; Jangkauan`, reachTitle: `Satu import. Lima target.`, reachSub: `Kode yang sama di mana pun Flutter berjalan &mdash; SQLite asli di seluler, FFI di desktop.`,
       ctaKicker: `&sect; 08 &middot; Ship it`, ctaTitle: `Tambah satu baris. Hapus seribu.`, ctaBody: `Berhenti menulis repositori, objek akses data, und lem migrasi. Deklarasikan entitas, impor singleton, und beralihlah ke bagian aplikasi Anda yang penting.`,
-      footerBody: `<code>b012_data</code> adalah paket ORM Flutter oleh <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Diterbitkan di bawah <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> yang disertakan.`,
+      footerBody: `<code>b012_data</code> adalah paket ORM Flutter oleh <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Diterbitkan di bawah <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> yang disertakan.`,
       footerPackage: `Paket`, footerDocs: `Dokumen`, footerRelated: `Terkait`, footerDocInstall: `Instalasi`, footerDocEntities: `Entitas`, footerDocCrud: `CRUD`, footerDocFiles: `Berkas`,
       footerBuilt: `&mdash; dibangun dengan dart, kopi & tinta`, footerVersion: `Versie 2.0.3`
     },
@@ -897,7 +897,7 @@ window.B012_I18N = {
       reachKicker: `&sect; 07 &middot; Phạm vi`, reachTitle: `Một lần import. Năm mục tiêu.`, reachSub: `Cùng một mã chạy ở bất cứ đâu Flutter hỗ trợ &mdash; SQLite gốc trên di động, FFI trên máy tính để bàn.`,
       ctaKicker: `&sect; 08 &middot; Triển khai`, ctaTitle: `Thêm một dòng. Xoá một nghìn.`, ctaBody: `Ngừng viết repository, đối tượng truy cập dữ liệu (DAO) và mã kết nối di chuyển (migration). Khai báo một thực thể, import các singleton và tập trung vào phần quan trọng nhất của ứng dụng.`,
       ctaInstall: `Cài từ pub.dev &rarr;`, ctaRead: `Đọc mã nguồn`,
-      footerBody: `<code>b012_data</code> là một gói Flutter ORM của <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Được phát hành theo <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> đi kèm.`,
+      footerBody: `<code>b012_data</code> là một gói Flutter ORM của <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Được phát hành theo <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> đi kèm.`,
       footerPackage: `Gói`, footerDocs: `Tài liệu`, footerRelated: `Liên quan`, footerDocInstall: `Cài đặt`, footerDocEntities: `Thực thể`, footerDocCrud: `CRUD`, footerDocFiles: `Tệp`,
       footerBuilt: `&mdash; được xây dựng bằng dart, cà phê và mực`, footerVersion: `Phiên bản 2.0.3`
     },
@@ -947,7 +947,7 @@ window.B012_I18N = {
       filePill3: `Punto di ingresso`, fileDesc3: `Esegue entrambi i demo in sequenza.`,
       reachKicker: `&sect; 07 &middot; Portata`, reachTitle: `Un import. Cinque target.`, reachSub: `Lo stesso codice ovunque Flutter giri &mdash; SQLite nativo su mobile, FFI su desktop.`,
       ctaKicker: `&sect; 08 &middot; Pubblica`, ctaTitle: `Aggiungi una riga. Elimina mille.`, ctaBody: `Smetti di scrivere repository, oggetti di accesso ai dati e codice di migrazione. Dichiara un'entità, importa i singleton e passa alla parte della tua app che conta.`,
-      footerBody: `<code>b012_data</code> è un pacchetto ORM per Flutter di <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Pubblicato sotto la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> inclusa.`,
+      footerBody: `<code>b012_data</code> è un pacchetto ORM per Flutter di <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Pubblicato sotto la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> inclusa.`,
       footerPackage: `Pacchetto`, footerDocs: `Documentazione`, footerRelated: `Correlati`, footerDocInstall: `Installazione`, footerDocEntities: `Entità`, footerDocCrud: `CRUD`, footerDocFiles: `File`,
       footerBuilt: `&mdash; costruito con dart, caffè & inchiostro`, footerVersion: `Versione 2.0.3`
     },
@@ -997,7 +997,7 @@ window.B012_I18N = {
       filePill3: `Ingangspunt`, fileDesc3: `Voert beide demo's achter elkaar uit.`,
       reachKicker: `&sect; 07 &middot; Bereik`, reachTitle: `Eén import. Vijf doelen.`, reachSub: `Dezelfde code overal waar Flutter draait &mdash; native SQLite op mobiel, FFI op desktop.`,
       ctaKicker: `&sect; 08 &middot; Ship it`, ctaTitle: `Voeg één regel toe. Verwijder er duizend.`, ctaBody: `Stop mit het schrijven van repositories, data-access objecten und migratie-lijm. Declareer eine entiteit, importeer de singletons, und ga verder mit het deel van je app dat er echt toe doet.`,
-      footerBody: `<code>b012_data</code> is ein Flutter ORM-pakket van <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Gepubliceerd onder de bijgevoegde <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> is ein Flutter ORM-pakket van <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Gepubliceerd onder de bijgevoegde <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Pakket`, footerDocs: `Docs`, footerRelated: `Gerelateerd`, footerDocInstall: `Installatie`, footerDocEntities: `Entiteiten`, footerDocCrud: `CRUD`, footerDocFiles: `Bestanden`,
       footerBuilt: `&mdash; gebouwd met dart, koffie & inkt`, footerVersion: `Versie 2.0.3`
     },
@@ -1047,7 +1047,7 @@ window.B012_I18N = {
       filePill3: `Punkt wejścia`, fileDesc3: `Uruchamia oba demona po kolei.`,
       reachKicker: `&sect; 07 &middot; Zasięg`, reachTitle: `Jeden import. Pięć platform.`, reachSub: `Ten sam kod wszędzie tam, kde działa Flutter &mdash; natywny SQLite na urządzeniach mobilnych, FFI na komputerach.`,
       ctaKicker: `&sect; 08 &middot; Ship it`, ctaTitle: `Dodaj jedną linię. Usuń tysiąc.`, ctaBody: `Przestań pisać repozytoria, obiekty dostępu do danych i kod migracyjny. Zadeklaruj encję, zaimportuj singletony i przejdź do najważniejszej części swojej aplikacji.`,
-      footerBody: `<code>b012_data</code> to pakiet ORM dla Fluttera autorstwa <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Wydany na licencji <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> to pakiet ORM dla Fluttera autorstwa <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Wydany na licencji <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Pakiet`, footerDocs: `Dokumentacja`, footerRelated: `Powiązane`, footerDocInstall: `Instalacja`, footerDocEntities: `Encje`, footerDocCrud: `CRUD`, footerDocFiles: `Pliki`,
       footerBuilt: `&mdash; zbudowano z dart, kawy i tuszu`, footerVersion: `Wersja 2.0.3`
     },
@@ -1097,7 +1097,7 @@ window.B012_I18N = {
       filePill3: `এন্ট্রি পয়েন্ট`, fileDesc3: `দুটি ডেমো পর্যায়ক্রমে চালায়।`,
       reachKicker: `&sect; ০৭ &middot; কভারেজ`, reachTitle: `একটি ইমপোর্ট। পাঁচটি টার্গেট।`, reachSub: `ফ্লাটার যেখানেই চলে সেখানেই একই কোড &mdash; মোবাইলে নেটিভ SQLite, ডেস্কটপে FFI।`,
       ctaKicker: `&sect; ০8 &middot; শিপ করুন`, ctaTitle: `এক লাইন যোগ করুন। হাজার লাইন মুছুন।`, ctaBody: `রিপোজিটরি, ডাটা-অ্যাক্সেস অবজেক্ট এবং মাইগ্রेशन গ্লু লেখা বন্ধ করুন। একটি এনটিটি ঘোষণা করুন, সিংগেলটন ইমপোর্ট করুন এবং আপনার অ্যাপের গুরুত্বপূর্ণ অংশে চলে যান।`,
-      footerBody: `<code>b012_data</code> হলো <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>-এর একটি Flutter ORM প্যাকেজ। এটি অন্তর্ভুক্ত <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>-এর অধীনে প্রকাশিত।`,
+      footerBody: `<code>b012_data</code> হলো <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>-এর একটি Flutter ORM প্যাকেজ। এটি অন্তর্ভুক্ত <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>-এর অধীনে প্রকাশিত।`,
       footerPackage: `প্যাকেজ`, footerDocs: `ডকস`, footerRelated: `সম্পর্কিত`, footerDocInstall: `ইনস্টলেশন`, footerDocEntities: `এনটিটি`, footerDocCrud: `CRUD`, footerDocFiles: `ফাইল`,
       footerBuilt: `&mdash; ডার্ট, কফি ও কালি দিয়ে তৈরি`, footerVersion: `সংস্করণ ২.০.৩`
     },
@@ -1147,7 +1147,7 @@ window.B012_I18N = {
       filePill3: `اینٹری پوائنٹ`, fileDesc3: `دونوں ڈیموز کو ترتیب سے چلاتا ہے۔`,
       reachKicker: `&sect; 07 &middot; رسائی`, reachTitle: `ایک امپورٹ। پانچ ٹارگٹس।`, reachSub: `وہی کوڈ ہر جگہ جہاں Flutter چلتا ہے &mdash; موبائل پر مقامی SQLite، ڈیسک ٹاپ پر FFI।`,
       ctaKicker: `&sect; 08 &middot; شپ کریں`, ctaTitle: `ایک لائن شامل کریں۔ ہزار حذف کریں۔`, ctaBody: `ریپوزٹریز اور مائیگریشن کا کوڈ لکھنا چھوڑیں۔ ایک اینٹٹی بیان کریں، سنگلٹن امپورٹ کریں، اور اپنی ایپ کے اہم حصے پر کام کریں۔`,
-      footerBody: `<code>b012_data</code> ایک Flutter ORM پیکیج ہے بذریعہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>। یہ شامل کردہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> کے تحت شائع کیا گیا ہے۔`,
+      footerBody: `<code>b012_data</code> ایک Flutter ORM پیکیج ہے بذریعہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>। یہ شامل کردہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> کے تحت شائع کیا گیا ہے۔`,
       footerPackage: `پیکیج`, footerDocs: `ڈاکس`, footerRelated: `متعلقہ`, footerDocInstall: `انسٹالیشن`, footerDocEntities: `اینٹٹیز`, footerDocCrud: `CRUD`, footerDocFiles: `فائلیں`,
       footerBuilt: `&mdash; ڈارٹ، کافی اور سیاہی کے ساتھ بنایا گیا`, footerVersion: `ورژن 2.0.3`
     }

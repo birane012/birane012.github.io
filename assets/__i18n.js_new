@@ -1,5 +1,5 @@
       ctaBody: `Ngừng viết repository, đối tượng truy cập dữ liệu (DAO) và mã kết nối di chuyển (migration). Khai báo một thực thể, import các singleton và tập trung vào phần quan trọng nhất của ứng dụng.`,
-      footerBody: `<code>b012_data</code> là một gói Flutter ORM của <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Được phát hành theo <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> đi kèm.`,
+      footerBody: `<code>b012_data</code> là một gói Flutter ORM của <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Được phát hành theo <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> đi kèm.`,
       footerPackage: `Gói`, footerDocs: `Tài liệu`, footerRelated: `Liên quan`, footerDocInstall: `Cài đặt`, footerDocEntities: `Thực thể`, footerDocCrud: `CRUD`, footerDocFiles: `Tệp`, footerBuilt: `&mdash; được xây dựng bằng dart, cà phê và mực`, footerVersion: `Phiên bản 2.0.3`
     },
     it: {
@@ -95,7 +95,7 @@
       ctaKicker: `&sect; 08 &middot; Pubblica`,
       ctaTitle: `Aggiungi una riga. Elimina mille.`,
       ctaBody: `Smetti di scrivere repository, oggetti di accesso ai dati e codice di migrazione. Dichiara un'entità, importa i singleton e passa alla parte della tua app che conta.`,
-      footerBody: `<code>b012_data</code> è un pacchetto ORM per Flutter di <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Pubblicato sotto la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> inclusa.`,
+      footerBody: `<code>b012_data</code> è un pacchetto ORM per Flutter di <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Pubblicato sotto la <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> inclusa.`,
       footerPackage: `Pacchetto`, footerDocs: `Documentazione`, footerRelated: `Correlati`, footerDocInstall: `Installazione`, footerDocEntities: `Entità`, footerDocCrud: `CRUD`, footerDocFiles: `File`, footerBuilt: `&mdash; costruito con dart, caffè & inchiostro`, footerVersion: `Versione 2.0.3`
     },
     nl: {
@@ -191,7 +191,7 @@
       ctaKicker: `&sect; 08 &middot; Ship it`,
       ctaTitle: `Voeg één regel toe. Verwijder er duizend.`,
       ctaBody: `Stop met het schrijven van repositories, data-access objecten en migratie-lijm. Declareer een entiteit, importeer de singletons, en ga verder met het deel van je app dat er echt toe doet.`,
-      footerBody: `<code>b012_data</code> is een Flutter ORM-pakket van <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Gepubliceerd onder de bijgevoegde <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> is een Flutter ORM-pakket van <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Gepubliceerd onder de bijgevoegde <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Pakket`, footerDocs: `Docs`, footerRelated: `Gerelateerd`, footerDocInstall: `Installatie`, footerDocEntities: `Entiteiten`, footerDocCrud: `CRUD`, footerDocFiles: `Bestanden`, footerBuilt: `&mdash; gebouwd met dart, koffie & inkt`, footerVersion: `Versie 2.0.3`
     },
     pl: {
@@ -287,7 +287,7 @@
       ctaKicker: `&sect; 08 &middot; Ship it`,
       ctaTitle: `Dodaj jedną linię. Usuń tysiąc.`,
       ctaBody: `Przestań pisać repozytoria, obiekty dostępu do danych i kod migracyjny. Zadeklaruj encję, zaimportuj singletony i przejdź do najważniejszej części swojej aplikacji.`,
-      footerBody: `<code>b012_data</code> to pakiet ORM dla Fluttera autorstwa <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>. Wydany na licencji <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
+      footerBody: `<code>b012_data</code> to pakiet ORM dla Fluttera autorstwa <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>. Wydany na licencji <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>.`,
       footerPackage: `Pakiet`, footerDocs: `Dokumentacja`, footerRelated: `Powiązane`, footerDocInstall: `Instalacja`, footerDocEntities: `Encje`, footerDocCrud: `CRUD`, footerDocFiles: `Pliki`, footerBuilt: `&mdash; zbudowano z dart, kawy i tuszu`, footerVersion: `Wersja 2.0.3`
     },
     bn: {
@@ -383,7 +383,7 @@
       ctaKicker: `&sect; ০৮ &middot; শিপ করুন`,
       ctaTitle: `এক লাইন যোগ করুন। হাজার লাইন মুছুন।`,
       ctaBody: `রিপোজিটরি, ডাটা-অ্যাক্সেস অবজেক্ট এবং মাইগ্রেশন গ্লু লেখা বন্ধ করুন। একটি এনটিটি ঘোষণা করুন, সিংগেলটন ইমপোর্ট করুন এবং আপনার অ্যাপের গুরুত্বপূর্ণ অংশে চলে যান।`,
-      footerBody: `<code>b012_data</code> হলো <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>-এর একটি Flutter ORM প্যাকেজ। এটি অন্তর্ভুক্ত <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>-এর অধীনে প্রকাশিত।`,
+      footerBody: `<code>b012_data</code> হলো <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>-এর একটি Flutter ORM প্যাকেজ। এটি অন্তর্ভুক্ত <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a>-এর অধীনে প্রকাশিত।`,
       footerPackage: `প্যাকেজ`, footerDocs: `ডকস`, footerRelated: `সম্পর্কিত`, footerDocInstall: `ইনস্টলেশন`, footerDocEntities: `এনটিটি`, footerDocCrud: `CRUD`, footerDocFiles: `ফাইল`, footerBuilt: `&mdash; ডার্ট, কফি ও কালি দিয়ে তৈরি`, footerVersion: `সংস্করণ ২.০.৩`
     },
     ur: {
@@ -479,7 +479,7 @@
       ctaKicker: `&sect; 08 &middot; شپ کریں`,
       ctaTitle: `ایک لائن شامل کریں۔ ہزار حذف کریں۔`,
       ctaBody: `ریپوزٹریز اور مائیگریشن کا کوڈ لکھنا چھوڑیں۔ ایک اینٹٹی بیان کریں، سنگلٹن امپورٹ کریں، اور آپ ایپ کے اہم حصے پر کام کریں۔`,
-      footerBody: `<code>b012_data</code> ایک Flutter ORM پیکیج ہے بذریعہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">birane012</a>। یہ شامل کردہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> کے تحت شائع کیا گیا ہے۔`,
+      footerBody: `<code>b012_data</code> ایک Flutter ORM پیکیج ہے بذریعہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">b012tech.com</a>। یہ شامل کردہ <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">LICENSE</a> کے تحت شائع کیا گیا ہے۔`,
       footerPackage: `پیکیج`, footerDocs: `ڈاکس`, footerRelated: `متعلقہ`, footerDocInstall: `انسٹالیشن`, footerDocEntities: `اینٹٹیز`, footerDocCrud: `CRUD`, footerDocFiles: `فائلیں`, footerBuilt: `&mdash; ڈارٹ، کافی اور سیاہی کے ساتھ بنایا گیا`, footerVersion: `ورژن 2.0.3`
     }
   }
