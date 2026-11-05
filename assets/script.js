@@ -132,21 +132,32 @@
 
   function applyTheme(theme) {
     root.dataset.theme = theme;
+    // Browser chrome (mobile address bar) follows the page background.
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const bg = getComputedStyle(root).getPropertyValue('--bg').trim();
+    if (meta && bg) meta.setAttribute('content', bg);
   }
 
   function initMobileNav() {
     const topbar = document.querySelector('.topbar');
     const toggle = document.querySelector('.nav-toggle');
     if (toggle && topbar) {
+      const close = () => {
+        topbar.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
       toggle.addEventListener('click', () => {
         const open = topbar.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', String(open));
       });
       document.querySelectorAll('.nav a').forEach((a) => {
-        a.addEventListener('click', () => {
-          topbar.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+        a.addEventListener('click', close);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && topbar.classList.contains('is-open')) {
+          close();
+          toggle.focus();
+        }
       });
     }
   }

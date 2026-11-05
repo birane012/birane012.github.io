@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>b012_data — Object–Relational Mapping for Flutter, the Spring Boot way.</title>
-  <meta name="description" content="A Flutter ORM package inspired by Spring Boot. Declare a plain Dart class and get every CRUD operation on a local SQLite database — no hand-written SQL, no boilerplate." />
+  <meta name="description" content="A Flutter ORM package inspired by Spring Boot. Declare a plain Dart class and get every CRUD operation on a local SQLite database — Android, iOS, macOS, Linux, Windows and web, with optional encryption." />
   <meta name="theme-color" content="#0E0D0B" />
 
   <meta property="og:title" content="b012_data — Flutter ORM, Spring Boot style" />
-  <meta property="og:description" content="Declare a plain Dart class and b012_data generates every CRUD operation on a local SQLite database." />
+  <meta property="og:description" content="Declare a plain Dart class and b012_data generates every CRUD operation on a local SQLite database. Version 2.1: web, encryption, transactions, migrations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://b012tech.com" />
 
@@ -18,7 +18,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" id="prism-base" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -32,14 +31,14 @@
       <a class="brand" href="#top" aria-label="b012_data home">
         <span class="brand__bracket">&lt;</span><span class="brand__name">b012_data</span><span class="brand__bracket">&gt;</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#install">Install</a>
-        <a href="#entity">Entities</a>
-        <a href="#crud">CRUD</a>
-        <a href="#disc">Files</a>
-        <a href="#notes">Notes</a>
-      </nav>
-      <div class="topbar__actions">
+      <div class="topbar__menu" id="topbar-menu">
+        <nav class="nav" aria-label="Primary">
+          <a href="#install">Install</a>
+          <a href="#entity">Entities</a>
+          <a href="#crud">CRUD</a>
+          <a href="#disc">Files</a>
+          <a href="#notes">Notes</a>
+        </nav>
         <div class="topbar__prefs">
           <select id="locale-select" class="topbar__select" aria-label="Language">
             <option value="auto">Language</option>
@@ -70,10 +69,12 @@
             <option value="nature">Nature</option>
           </select>
         </div>
+      </div>
+      <div class="topbar__actions">
         <a class="btn btn--ghost" href="https://pub.dev/packages/b012_data" target="_blank" rel="noopener">pub.dev &#x2197;</a>
         <a class="btn btn--solid" href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">GitHub &#x2197;</a>
       </div>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="topbar-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -92,8 +93,14 @@
             <span class="dot"></span>
             <span>Flutter package</span>
             <span class="eyebrow__sep">&mdash;</span>
-            <span>v2.0.3</span>
+            <span>v2.1.0</span>
           </div>
+
+          <a class="hero__news" href="#whats-new">
+            <span class="hero__news-tag">2.1</span>
+            <span class="hero__news-text">New: web, encryption, transactions, migrations</span>
+            <span class="hero__news-arrow" aria-hidden="true">&rarr;</span>
+          </a>
 
           <h1 class="hero__title">
             <strong class="hero__package">b012_data</strong>,
@@ -113,8 +120,8 @@
               <span class="install__hash">$</span>
               <span>add to <code>pubspec.yaml</code></span>
             </div>
-            <div class="install__cmd" data-copy="b012_data: ^2.0.3">
-              <code><span class="tok-key">b012_data</span><span class="tok-punct">:</span> <span class="tok-ver">^2.0.3</span></code>
+            <div class="install__cmd" data-copy="b012_data: ^2.1.0">
+              <code><span class="tok-key">b012_data</span><span class="tok-punct">:</span> <span class="tok-ver">^2.1.0</span></code>
               <button class="copy-btn" type="button" aria-label="Copy">Copy</button>
             </div>
           </div>
@@ -126,7 +133,7 @@
 
           <ul class="hero__meta" aria-label="Package highlights">
             <li><span class="num">01</span><span>Zero SQL to maintain</span></li>
-            <li><span class="num">02</span><span>5 platforms, one API</span></li>
+            <li><span class="num">02</span><span>6 platforms, one API</span></li>
             <li><span class="num">03</span><span>Metadata in SQLite, blobs on disk</span></li>
           </ul>
         </div>
@@ -188,15 +195,19 @@
           <span>macOS</span><span class="dot-sep"></span>
           <span>LINUX</span><span class="dot-sep"></span>
           <span>WINDOWS</span><span class="dot-sep"></span>
+          <span>WEB</span><span class="dot-sep"></span>
           <span>sqflite</span><span class="dot-sep"></span>
           <span>sqflite_common_ffi</span><span class="dot-sep"></span>
+          <span>sqlite3</span><span class="dot-sep"></span>
           <span>ANDROID</span><span class="dot-sep"></span>
           <span>iOS</span><span class="dot-sep"></span>
           <span>macOS</span><span class="dot-sep"></span>
           <span>LINUX</span><span class="dot-sep"></span>
           <span>WINDOWS</span><span class="dot-sep"></span>
+          <span>WEB</span><span class="dot-sep"></span>
           <span>sqflite</span><span class="dot-sep"></span>
           <span>sqflite_common_ffi</span><span class="dot-sep"></span>
+          <span>sqlite3</span><span class="dot-sep"></span>
         </div>
       </div>
     </section>
@@ -220,9 +231,9 @@
           <div class="feature__meta">insertObjet &middot; get &middot; getAll &middot; update &middot; delete</div>
         </article>
         <article class="feature">
-          <header><span class="feature__num">[03]</span><h3>Five platforms, one API</h3></header>
-          <p>Native <code>sqflite</code> on Android, iOS and macOS. Transparent fallback to <code>sqflite_common_ffi</code> on Linux and Windows &mdash; the same code everywhere.</p>
-          <div class="feature__meta">Android &middot; iOS &middot; macOS &middot; Linux &middot; Windows</div>
+          <header><span class="feature__num">[03]</span><h3>Six platforms, one API</h3></header>
+          <p>Native <code>sqflite</code> on Android, iOS and macOS, <code>sqflite_common_ffi</code> on Linux and Windows, SQLite as WebAssembly in the browser &mdash; the same code everywhere.</p>
+          <div class="feature__meta">Android &middot; iOS &middot; macOS &middot; Linux &middot; Windows &middot; Web</div>
         </article>
         <article class="feature">
           <header><span class="feature__num">[04]</span><h3>Bytes on disk, metadata in SQLite</h3></header>
@@ -230,6 +241,64 @@
           <div class="feature__meta">readFileAs* &middot; saveDataToDisc &middot; getEntityFileOnDisc</div>
         </article>
       </div>
+    </section>
+
+    <section class="whatsnew section" id="whats-new" lang="en" dir="ltr" aria-labelledby="whats-new-title">
+      <div class="section__head">
+        <div class="section__kicker">&sect; 2.1 &middot; What&rsquo;s new</div>
+        <h2 class="section__title" id="whats-new-title">Hardened, without changing how you use it.</h2>
+        <p class="section__sub">Every method of 2.0.3 keeps its name, its parameters and its default behaviour &mdash; including returning <code>false</code>, <code>null</code> or <code>[]</code> on failure. Everything new is opt-in.</p>
+      </div>
+
+      <div class="feature-grid feature-grid--3">
+        <article class="feature">
+          <header><span class="feature__num">[01]</span><h3><a href="#v21-security">Bound values</a></h3></header>
+          <p>Every <code>afterWhere</code> method takes <code>whereArgs</code>. A value with an apostrophe works; a crafted name cannot inject SQL.</p>
+          <div class="feature__meta">whereArgs &middot; ? placeholders &middot; whereMcop AND / OR</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[02]</span><h3><a href="#v21-errors">Strict mode</a></h3></header>
+          <p><code>strict</code> throws the real error instead of <code>false</code> / <code>[]</code>; <code>onError</code> receives the errors turned into <code>false</code> / <code>[]</code>.</p>
+          <div class="feature__meta">strict &middot; onError</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[03]</span><h3><a href="#v21-transactions">Transactions</a></h3></header>
+          <p>Everything or nothing: every <code>DataAccess</code> method called inside takes part, and a transaction started inside a transaction joins it.</p>
+          <div class="feature__meta">transaction</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[04]</span><h3><a href="#v21-keys">Keys, indexes, replace</a></h3></header>
+          <p>Composite primary keys, indexes and unique indexes as entity getters; <code>INSERT OR REPLACE</code> with one parameter.</p>
+          <div class="feature__meta">pKeys &middot; indexes &middot; uniqueIndexes &middot; orReplace</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[05]</span><h3><a href="#v21-names">Schema evolution</a></h3></header>
+          <p>Stable table names, new entity columns added to their table, versioned migrations, and foreign keys enforced on demand.</p>
+          <div class="feature__meta">registerEntity &middot; autoAddColumns &middot; migrations &middot; enforceForeignKeys</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[06]</span><h3><a href="#v21-queries">Queries</a></h3></header>
+          <p>Paged, bound queries that return <code>[]</code> when nothing matches, and raw SQL whose <code>?</code> placeholders are still bound.</p>
+          <div class="feature__meta">query &middot; rawQuery &middot; rawQueryAs &middot; rawExecute</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[07]</span><h3><a href="#v21-web">Web</a></h3></header>
+          <p>The same API in a browser: WebAssembly SQLite, IndexedDB, every write stored before it returns, one tab at a time.</p>
+          <div class="feature__meta">dart run b012_data:setup_web</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[08]</span><h3><a href="#v21-encryption">Encryption</a></h3></header>
+          <p>SQLite3MultipleCiphers for the database, AES-256-GCM for the files; an encrypted database is never opened without its key.</p>
+          <div class="feature__meta">useEncryptionKey &middot; encryptDatabase &middot; changeEncryptionKey</div>
+        </article>
+        <article class="feature">
+          <header><span class="feature__num">[09]</span><h3><a href="#v21-location">Data location &amp; files</a></h3></header>
+          <p>On Windows and Linux, new installations keep their data in the application support folder. Files are written all at once; a name cannot leave <code>filesPath</code>.</p>
+          <div class="feature__meta">databasesPath &middot; filesPath &middot; changeDB</div>
+        </article>
+      </div>
+
+      <p class="whatsnew__foot">2.1 requires Dart 3.12 and Flutter 3.44; older Flutter versions keep resolving 2.0.3. <a href="#v21">Every change in detail &rarr;</a></p>
     </section>
 
     <div class="rule" aria-hidden="true"><span>&sect;</span></div>
@@ -249,6 +318,7 @@
             </ol>
           </li>
           <li><a href="#disc">04 &mdash; Files on disk</a></li>
+          <li><a href="#v21">2.1 &mdash; What&rsquo;s new</a></li>
           <li><a href="#notes">05 &mdash; Things to know</a></li>
           <li><a href="#example">06 &mdash; Full example</a></li>
           <li><a href="#license">07 &mdash; License</a></li>
@@ -261,20 +331,22 @@
           <div class="section__head">
             <div class="section__kicker">&sect; 01 &middot; Setup</div>
         <h2 class="section__title">Installation</h2>
-            <p class="section__sub">Add the dependency, pull it in, and you are ready. A default database named <code>sqlf_easy.db</code> is created on first import.</p>
+            <p class="section__sub">Add the dependency, pull it in, and you are ready. The first access creates a default database named <code>sqlf_easy.db</code>.</p>
           </div>
 
           <div class="prose">
             <p><em>Add the package to your</em> <code>pubspec.yaml</code><em>:</em></p>
 <pre><code class="language-yaml">dependencies:
-  b012_data: ^2.0.3</code></pre>
+  b012_data: ^2.1.0</code></pre>
 
             <p><em>Then run:</em></p>
 <pre><code class="language-bash">flutter pub get</code></pre>
 
+            <p class="install__req">2.1 requires Dart 3.12 and Flutter 3.44 or later (the current <code>sqflite</code> packages do); an application on an older Flutter keeps resolving 2.0.3.</p>
+
             <aside class="callout callout--note">
               <div class="callout__label">Note &mdash; default database</div>
-              <p>As soon as <code>b012_data</code> is imported, a database called <code>sqlf_easy.db</code> is created automatically in the application&rsquo;s documents directory, inside the <code>databases</code> folder. Use <code>changeDB</code> if you want a different one.</p>
+              <p>The first access creates a default database named <code>sqlf_easy.db</code> in the application&rsquo;s databases folder (see <a href="#v21-location">where your data lives</a>). Use <code>changeDB</code> if you want another one.</p>
             </aside>
 
             <p>Before calling any method that needs the documents directory (<code>databasesPath</code>, <code>filesPath</code>, &hellip;), make sure the Flutter bindings are initialized:</p>
@@ -304,7 +376,7 @@ void main() async {
             <li>
               <span class="steps__num">1</span>
               <div>
-                <h4>Primary key <span class="steps__flag">required</span></h4>
+                <h3>Primary key <span class="steps__flag">required</span></h3>
                 <p>A <code>MapEntry</code> whose key is the column name and whose value is <code>true</code> to use <code>AUTOINCREMENT</code>.</p>
 <pre><code class="language-dart">MapEntry&lt;String, bool&gt; get pKeyAuto =&gt; const MapEntry('idPers', false);</code></pre>
               </div>
@@ -312,7 +384,7 @@ void main() async {
             <li>
               <span class="steps__num">2</span>
               <div>
-                <h4>Constraints <span class="steps__flag steps__flag--soft">optional</span></h4>
+                <h3>Constraints <span class="steps__flag steps__flag--soft">optional</span></h3>
                 <p>Non-nullable columns, uniques, check constraints, default values and foreign keys &mdash; each expressed as a getter.</p>
 <pre><code class="language-dart">List&lt;String&gt; get notNulls  =&gt; ['firstName', 'lastName', 'sex', 'dateOfBirth'];
 // List&lt;String&gt; get uniques =&gt; ['email'];
@@ -324,7 +396,7 @@ void main() async {
             <li>
               <span class="steps__num">3</span>
               <div>
-                <h4>Unnamed constructor <span class="steps__flag">required</span></h4>
+                <h3>Unnamed constructor <span class="steps__flag">required</span></h3>
                 <p>Used by the package to instantiate an entity from the <code>fromMap</code> callback below.</p>
 <pre><code class="language-dart">Person([this.idPers, this.firstName, this.lastName, this.sex, this.dateOfBirth]);</code></pre>
               </div>
@@ -332,7 +404,7 @@ void main() async {
             <li>
               <span class="steps__num">4</span>
               <div>
-                <h4>Serialization <code>toMap</code> <span class="steps__flag">required</span></h4>
+                <h3>Serialization <code>toMap</code> <span class="steps__flag">required</span></h3>
                 <p>For non-nullable fields the <code>ColumnType</code> fallback can be omitted &mdash; the value will never be null at insertion time.</p>
 <pre><code class="language-dart">Map&lt;String, dynamic&gt; toMap() =&gt; {
   'idPers': idPers ?? ColumnType.String,
@@ -346,7 +418,7 @@ void main() async {
             <li>
               <span class="steps__num">5</span>
               <div>
-                <h4>Named <code>fromMap</code> constructor <span class="steps__flag">required</span></h4>
+                <h3>Named <code>fromMap</code> constructor <span class="steps__flag">required</span></h3>
                 <p>Deserialization from a single SQLite row.</p>
 <pre><code class="language-dart">Person.fromMap(Map&lt;String, Object?&gt; json, {bool isInt = true}) {
   idPers      = json['idPers']      as String?;
@@ -360,7 +432,7 @@ void main() async {
             <li>
               <span class="steps__num">6</span>
               <div>
-                <h4>Instance-side <code>fromMap</code> <span class="steps__flag">required</span></h4>
+                <h3>Instance-side <code>fromMap</code> <span class="steps__flag">required</span></h3>
                 <p>Wraps the named constructor so generic getters can call it off any instance.</p>
 <pre><code class="language-dart">Person fromMap(Map&lt;String, Object?&gt; json) =&gt; Person.fromMap(json);</code></pre>
               </div>
@@ -433,10 +505,10 @@ final List&lt;String&gt; womenFirstNames = await DataAccess.instance
 
 // READ (projection) &mdash; pull several columns at once.
 final List&lt;Map&lt;String, Object?&gt;&gt; nameRows = await DataAccess.instance
-    .updateSomeColumnsOf&lt;Person&gt;('firstName, lastName');
+    .getSomeColumnsFrom&lt;Person&gt;('firstName, lastName');
 
 final List&lt;Map&lt;String, Object?&gt;&gt; womenNameRows =
-    await DataAccess.instance.updateSomeColumnsOf&lt;Person&gt;(
+    await DataAccess.instance.getSomeColumnsFrom&lt;Person&gt;(
   'firstName, lastName',
   afterWhere: 'sex = 0',
 );</code></pre>
@@ -575,26 +647,189 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
           </section>
         </section>
 
+        <section class="doc-section section" id="v21" lang="en" dir="ltr">
+          <div class="section__head">
+            <div class="section__kicker">&sect; 2.1 &middot; Opt-in</div>
+            <h2 class="section__title">What&rsquo;s new in 2.1, in detail</h2>
+            <p class="section__sub">2.1 hardens the package without changing how you use it: everything of 2.0.3 keeps working unchanged, and each addition below is opt-in. The full list is in the <a class="ext-link" href="https://pub.dev/packages/b012_data/changelog" target="_blank" rel="noopener">changelog</a>.</p>
+          </div>
+
+          <section class="subsection" id="v21-security">
+            <div class="subsection__label">a. Security</div>
+            <h3>Bound values: never build <code>afterWhere</code> from user input.</h3>
+            <p><code>afterWhere</code> is inserted as is after <code>WHERE</code> (that is what lets you write <code>ORDER BY</code> and <code>LIMIT</code> in it). Put <code>?</code> placeholders in it and pass the values in <code>whereArgs</code> instead &mdash; booleans and dates are bound exactly as b012_data stores them.</p>
+<pre><code class="language-dart">final Person? p = await DataAccess.instance.get&lt;Person&gt;(
+  Person(),
+  'lastName = ? AND sex = ?',
+  [userInput, true],
+);
+final int n = await DataAccess.instance.countElementsOf&lt;Person&gt;(
+  afterWhere: 'dateOfBirth &gt;= ?',
+  whereArgs: [DateTime(2000)],
+);</code></pre>
+            <p>Every <code>afterWhere</code> method accepts <code>whereArgs</code> (positional after <code>afterWhere</code> for <code>get</code>, <code>getAllSorted</code> and <code>deleteObjet</code>, named otherwise). The queries the package builds itself (<code>getLogin</code>, <code>checkIfTableExists</code>, <code>getEntityFileOnDisc</code>, &hellip;) always bind their values. Table and column names that are SQL keywords (<code>order</code>, <code>group</code>, &hellip;) are quoted for you; in your own <code>afterWhere</code> text, quote them yourself (<code>'"group" = ?'</code>). <code>whereMcop</code> accepts only <code>AND</code> and <code>OR</code>.</p>
+          </section>
+
+          <section class="subsection" id="v21-errors">
+            <div class="subsection__label">b. Errors</div>
+            <h3>Strict mode, or just be told.</h3>
+<pre><code class="language-dart">DataAccess.instance.strict = true;          // throw the real error
+DataAccess.instance.onError = (e, s) =&gt; log(e); // or just be told</code></pre>
+            <p>With <code>strict</code>, a failing insert or update throws the real <code>DatabaseException</code> instead of returning <code>false</code>; &ldquo;nothing found&rdquo; is still <code>null</code> or <code>[]</code>. Without it, every error turned into <code>false</code> or <code>[]</code> is still printed with <code>debugPrint</code> and also passed to <code>onError</code>.</p>
+          </section>
+
+          <section class="subsection" id="v21-transactions">
+            <div class="subsection__label">c. Transactions</div>
+            <h3>Everything or nothing.</h3>
+<pre><code class="language-dart">await DataAccess.instance.transaction(() async {
+  await DataAccess.instance.insertObjet(order);
+  await DataAccess.instance.updateSomeColumnsOf&lt;Stock&gt;(['qty'], ['id'], [qty - 1, id]);
+}); // everything or nothing</code></pre>
+            <p>Every <code>DataAccess</code> method called inside takes part in the transaction; a transaction started inside a transaction joins it. Inside a transaction a failing method throws (even outside strict mode) instead of returning <code>false</code>, so that everything is rolled back. Outside a transaction, <code>insertObjetList</code> keeps its 2.0.3 behaviour (rows before a failing one are kept).</p>
+          </section>
+
+          <section class="subsection" id="v21-keys">
+            <div class="subsection__label">d. Replace, keys, indexes</div>
+            <h3>One parameter, three new getters.</h3>
+<pre><code class="language-dart">await DataAccess.instance.insertObjet(person, orReplace: true); // INSERT OR REPLACE</code></pre>
+            <p>New optional entity getters &mdash; <code>pKeys</code> declares a composite primary key, in place of <code>pKeyAuto</code>:</p>
+<pre><code class="language-dart">List&lt;String&gt; get pKeys =&gt; ['maintenanceId', 'technicianId'];   // composite key
+Map&lt;String, List&lt;String&gt;&gt; get indexes =&gt; {'assignment_trade': ['trade']};
+Map&lt;String, List&lt;String&gt;&gt; get uniqueIndexes =&gt; {'one_trade': ['maintenanceId', 'trade']};</code></pre>
+            <p>Indexes are created when missing, also on an existing table.</p>
+          </section>
+
+          <section class="subsection" id="v21-names">
+            <div class="subsection__label">e. Stable table names</div>
+            <h3>Register the entities whose name must not move.</h3>
+            <p>A table is named after its class. Obfuscated builds (and web release builds) change class names, so register the entities whose table name must stay the same:</p>
+<pre><code class="language-dart">DataAccess.instance.registerEntity&lt;Person&gt;('person');</code></pre>
+            <p>Every method follows the registration, including the ones that only receive the type (<code>countElementsOf&lt;Person&gt;()</code>). <strong>In a browser, registration is required.</strong></p>
+          </section>
+
+          <section class="subsection" id="v21-migrations">
+            <div class="subsection__label">f. Schema evolution</div>
+            <h3>New columns, versioned migrations.</h3>
+<pre><code class="language-dart">DataAccess.instance.autoAddColumns = true; // new entity columns are added
+DataAccess.instance.migrations = {
+  2: () =&gt; DataAccess.instance.rawExecute('UPDATE person SET sex = 0 WHERE sex IS NULL'),
+  3: () async { /* ... */ },
+};</code></pre>
+            <p>With <code>autoAddColumns</code> (off by default), a column added to an entity is added to its table (<code>ALTER TABLE &hellip; ADD COLUMN</code>); columns are never dropped or renamed. Migrations run once each when the database opens, in order, each in its own transaction that sets <code>PRAGMA user_version</code>; a failing step is rolled back and makes the opening fail. Set both before the first access.</p>
+          </section>
+
+          <section class="subsection" id="v21-queries">
+            <div class="subsection__label">g. Queries</div>
+            <h3>Paged, sorted, bound &mdash; or raw SQL.</h3>
+<pre><code class="language-dart">final List&lt;Person&gt; page = await DataAccess.instance.query&lt;Person&gt;(
+  Person(),
+  where: 'sex = ?',
+  whereArgs: [true],
+  orderBy: 'lastName',
+  limit: 20,
+  offset: 40,
+); // [] when nothing matches
+final rows = await DataAccess.instance.rawQuery('SELECT ... WHERE x = ?', [x]);
+final people = await DataAccess.instance.rawQueryAs&lt;Person&gt;(Person(), 'SELECT ...');
+final changed = await DataAccess.instance.rawExecute('UPDATE ... WHERE id = ?', [id]);</code></pre>
+            <p><code>orderBy</code> is inserted as is, like <code>afterWhere</code>: never from user input. <code>rawExecute</code> returns the number of rows the statement changed.</p>
+          </section>
+
+          <section class="subsection" id="v21-fkeys">
+            <div class="subsection__label">h. Foreign keys</div>
+            <h3>Declared, and now enforced on demand.</h3>
+            <p><code>fKeys</code> were declared but never enforced. Set <code>enforceForeignKeys</code> before the first access to enforce them (<code>PRAGMA foreign_keys = ON</code>). It is off by default, because enforcing them could break an application that inserts a child before its parent.</p>
+<pre><code class="language-dart">DataAccess.instance.enforceForeignKeys = true;</code></pre>
+          </section>
+
+          <section class="subsection" id="v21-web">
+            <div class="subsection__label">i. Web</div>
+            <h3>The same API, in a browser.</h3>
+<pre><code class="language-bash">dart run b012_data:setup_web   # puts sqlite3mc.wasm and sqlite3.wasm in web/</code></pre>
+            <ul class="list">
+              <li>SQLite runs as WebAssembly (<code>sqlite3mc.wasm</code> by default; set <code>DataAccess.instance.webSqliteWasmUri</code> to use another module). Databases and <code>DiscData</code> files live in IndexedDB; persistent storage is requested.</li>
+              <li>Every write is stored in IndexedDB before its future completes.</li>
+              <li>One tab at a time: a second tab opening the same database gets a clear <code>StateError</code> instead of a copy that would overwrite the first. This needs the Web Locks API, available on <code>https</code> and <code>localhost</code>.</li>
+              <li>Entities must be registered (<code>registerEntity</code>).</li>
+              <li><code>DataAccess.db</code> and <code>openDB</code> (sqflite objects) are not available; <code>DiscData.getFile</code> returns <code>null</code> (there is no file system).</li>
+              <li>A browser can still erase site data when the user clears it.</li>
+            </ul>
+          </section>
+
+          <section class="subsection" id="v21-encryption">
+            <div class="subsection__label">j. Encryption</div>
+            <h3>Against a lost or stolen device.</h3>
+            <p>The database and the files saved by name can be encrypted with <a class="ext-link" href="https://github.com/utelle/SQLite3MultipleCiphers" target="_blank" rel="noopener">SQLite3MultipleCiphers</a> (MIT licence). Choose this engine in <strong>your application&rsquo;s</strong> <code>pubspec.yaml</code> (in a browser, <code>setup_web</code> already provides <code>sqlite3mc.wasm</code>):</p>
+<pre><code class="language-yaml">hooks:
+  user_defines:
+    sqlite3:
+      source: sqlite3mc</code></pre>
+<pre><code class="language-dart">await DataAccess.instance.useEncryptionKey(key);      // before the first access
+await DataAccess.instance.encryptDatabase(key);       // encrypt an existing plaintext database in place
+await DataAccess.instance.changeEncryptionKey(newKey);</code></pre>
+            <ul class="list">
+              <li>A new database is created encrypted; a wrong key throws a <code>StateError</code>.</li>
+              <li>The engine is checked first: if it does not encrypt, a <code>StateError</code> says what to add to <code>pubspec.yaml</code>. A database is never created in plaintext by mistake.</li>
+              <li>A key given for an existing plaintext database is refused (use <code>encryptDatabase</code>); an encrypted database is never opened without its key.</li>
+              <li>Files saved by name with <code>DiscData</code> are encrypted (AES-256-GCM) with a random key kept inside the encrypted database, so changing the database key rewrites no file. Files written at an explicit path stay plain unless <code>saveDataToDisc(..., encrypt: true)</code>.</li>
+              <li><code>encryptDatabase</code> encrypts the files <code>DiscData</code> saved by name since 2.1 and the names you pass in <code>alsoFiles</code>; nothing else in the files folder is touched.</li>
+              <li>On Android and iOS an encrypted database goes through the engine bundled by <code>package:sqlite3</code>, not the system SQLite.</li>
+              <li><strong>b012_data never stores the key</strong>: your application provides it at each start. On a device, keep a random key in the system vault (Keystore, Keychain, Windows data protection); in a browser there is no vault, so the key must come from something the user types.</li>
+            </ul>
+          </section>
+
+          <section class="subsection" id="v21-location">
+            <div class="subsection__label">k. Where your data lives</div>
+            <h3>Windows and Linux: one folder per application. Everywhere: files written safely.</h3>
+            <ul class="list">
+              <li><strong>Android, iOS, macOS</strong>: exactly as in 2.0.3.</li>
+              <li><strong>Windows, Linux</strong>: 2.0.3 created the database under the current directory (<code>.dart_tool/sqflite_common_ffi/databases</code>), so launching the application from another folder opened another database. 2.1 keeps a new installation&rsquo;s databases, <code>dbName</code> and files in the application support folder. A database left by 2.0.3 is found and kept where it is (its absolute path is recorded), so nothing disappears.</li>
+              <li><code>changeDB</code> creates the folder it needs.</li>
+              <li>Files are read and written asynchronously. A file is written to a temporary file, flushed, then renamed over the target: a reader never sees half of it.</li>
+              <li>A file <em>name</em> can no longer point outside <code>filesPath</code> (<code>'../x'</code> throws an <code>ArgumentError</code>); explicit absolute paths work as before.</li>
+            </ul>
+          </section>
+
+          <section class="subsection" id="v21-more">
+            <div class="subsection__label">l. Also in 2.1</div>
+            <h3>Robustness, requirements, tests.</h3>
+            <ul class="list">
+              <li>One opening shared by concurrent first accesses; table creations serialized.</li>
+              <li>Failing entity getters are reported. A constant <code>checks</code> map no longer crashes table creation when the entity has a boolean column.</li>
+              <li>Requires Dart 3.12 / Flutter 3.44 (current <code>sqflite</code>); older Flutter versions keep resolving 2.0.3.</li>
+              <li>The package now has 98 tests, plus a browser check (<code>tool/web_check</code>).</li>
+              <li>Tested for 2.1 on Windows (unit tests, real SQLite3MultipleCiphers), in Chrome (the check application in <code>tool/web_check</code>) and on an Android emulator. iOS, macOS and Linux share the same code paths.</li>
+            </ul>
+          </section>
+        </section>
+
         <section class="doc-section section" id="notes">
           <div class="section__head">
             <div class="section__kicker">&sect; 05 &middot; Edge cases</div>
             <h2 class="section__title">Things to know</h2>
-            <p class="section__sub">Two subtleties that save debugging time later.</p>
+            <p class="section__sub">Three subtleties that save debugging time later.</p>
           </div>
 
           <div class="notes">
             <article class="note">
               <div class="note__num">01</div>
               <div class="note__body">
-                <h4>Missing-table exceptions</h4>
-                <p>Most entity-oriented methods throw <code>DatabaseException('no such table: &hellip;')</code> when the underlying table does not exist. The exceptions are <code>updateWholeObject</code>, <code>updateSomeColumnsOf</code>, <code>getAColumnFromWithTableName</code> and <code>getAColumnFrom</code>, which catch the error and only log it via <code>debugPrint</code>. Wrap the other methods in <code>try</code>/<code>catch</code> if you are not sure the table already exists.</p>
+                <h3>Missing-table exceptions</h3>
+                <p>Most entity-oriented methods throw <code>DatabaseException('no such table: &hellip;')</code> when the underlying table does not exist. The exceptions are <code>updateWholeObject</code>, <code>updateSomeColumnsOf</code>, <code>getAColumnFromWithTableName</code> and <code>getAColumnFrom</code>, which catch the error and only log it via <code>debugPrint</code> (and <code>onError</code>) &mdash; unless <code>strict</code> is set. Wrap the other methods in <code>try</code>/<code>catch</code> if you are not sure the table already exists.</p>
               </div>
             </article>
             <article class="note">
               <div class="note__num">02</div>
               <div class="note__body">
-                <h4>Dart map vs. SQLite-ready map</h4>
+                <h3>Dart map vs. SQLite-ready map</h3>
                 <p><code>insertObjet</code> and <code>insertObjetList</code> internally convert your entity map using <code>mapToUse(entity.toMap())</code>. Call <code>mapToUse(entity.toMap(), forDB: false)</code> yourself when you want a plain Dart map (for JSON serialization or display) instead of an SQLite-ready one.</p>
+              </div>
+            </article>
+            <article class="note">
+              <div class="note__num">03</div>
+              <div class="note__body">
+                <h3><code>afterWhere</code> is inserted as is</h3>
+                <p>Never build an <code>afterWhere</code> text from user input: put <code>?</code> placeholders in it and pass the values in <code>whereArgs</code> (see <a href="#v21-security">bound values</a>).</p>
               </div>
             </article>
           </div>
@@ -629,8 +864,16 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
                 <a class="files__path ext-link" href="https://github.com/birane012/b012_data/blob/master/example/main.dart" target="_blank" rel="noopener">example/main.dart</a>
                 <span class="files__pill">Entry point</span>
               </div>
-              <p>Runs both demos in sequence.</p>
+              <p>Runs the three demos in sequence.</p>
               <code class="files__run">flutter run -t example/main.dart</code>
+            </li>
+            <li>
+              <div class="files__head">
+                <a class="files__path ext-link" href="https://github.com/birane012/b012_data/blob/master/example/whats_new_example.dart" target="_blank" rel="noopener">example/whats_new_example.dart</a>
+                <span class="files__pill">What&rsquo;s new</span>
+              </div>
+              <p>The 2.1 additions: registration, bound values, transactions, queries, replace.</p>
+              <code class="files__run">flutter run -t example/whats_new_example.dart</code>
             </li>
           </ul>
         </section>
@@ -641,17 +884,20 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
     <section class="platforms section" aria-label="Supported platforms">
       <div class="section__head section__head--center">
         <div class="section__kicker">&sect; 07 &middot; Reach</div>
-        <h2 class="section__title">One import. Five targets.</h2>
-        <p class="section__sub">Same code, everywhere Flutter runs &mdash; native SQLite on mobile, FFI on desktop.</p>
+        <h2 class="section__title">One import. Six targets.</h2>
+        <p class="section__sub">Same code, everywhere Flutter runs &mdash; native SQLite on mobile, FFI on desktop, WebAssembly in the browser.</p>
       </div>
 
       <ul class="plat-grid">
         <li><span class="plat__num">A</span><span class="plat__name">Android</span><span class="plat__engine">sqflite</span></li>
         <li><span class="plat__num">B</span><span class="plat__name">iOS</span><span class="plat__engine">sqflite</span></li>
         <li><span class="plat__num">C</span><span class="plat__name">macOS</span><span class="plat__engine">sqflite</span></li>
-        <li><span class="plat__num">D</span><span class="plat__name">Linux</span><span class="plat__engine">sqflite&#95;common&#95;ffi</span></li>
-        <li><span class="plat__num">E</span><span class="plat__name">Windows</span><span class="plat__engine">sqflite&#95;common&#95;ffi</span></li>
+        <li><span class="plat__num">D</span><span class="plat__name">Linux</span><span class="plat__engine">sqflite&#95;<wbr>common&#95;<wbr>ffi</span></li>
+        <li><span class="plat__num">E</span><span class="plat__name">Windows</span><span class="plat__engine">sqflite&#95;<wbr>common&#95;<wbr>ffi</span></li>
+        <li><span class="plat__num">F</span><span class="plat__name">Web</span><span class="plat__engine">sqlite3 &middot; wasm</span></li>
       </ul>
+
+      <p class="platforms__note">Tested for 2.1 on Windows (unit tests, real SQLite3MultipleCiphers), in Chrome (the check application in <code>tool/web_check</code>) and on an Android emulator. iOS, macOS and Linux share the same code paths.</p>
     </section>
 
     <section class="cta section" id="license">
@@ -669,7 +915,7 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
           <div class="ascii">
 <pre>+----------------------+
 |  b012_data           |
-|  v2.0.3              |
+|  v2.1.0              |
 |----------------------|
 |  &gt; pub add b012_data |
 |  &gt; declare Entity    |
@@ -690,21 +936,23 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
       </div>
       <nav class="foot__nav" aria-label="Footer">
         <div>
-          <h5>Package</h5>
+          <h2>Package</h2>
           <a href="https://pub.dev/packages/b012_data" target="_blank" rel="noopener">pub.dev &#x2197;</a>
           <a href="https://github.com/birane012/b012_data" target="_blank" rel="noopener">GitHub &#x2197;</a>
         </div>
         <div>
-          <h5>Docs</h5>
+          <h2>Docs</h2>
           <a href="#install">Installation</a>
           <a href="#entity">Entities</a>
           <a href="#crud">CRUD</a>
           <a href="#disc">Files</a>
+          <a href="#whats-new">What&rsquo;s new in 2.1</a>
         </div>
         <div>
-          <h5>Related</h5>
+          <h2>Related</h2>
           <a href="https://pub.dev/packages/sqflite" target="_blank" rel="noopener">sqflite &#x2197;</a>
           <a href="https://pub.dev/packages/sqflite_common_ffi" target="_blank" rel="noopener">sqflite&#95;common&#95;ffi &#x2197;</a>
+          <a href="https://pub.dev/packages/sqlite3" target="_blank" rel="noopener">sqlite3 &#x2197;</a>
           <a href="https://flutter.dev" target="_blank" rel="noopener">Flutter &#x2197;</a>
         </div>
       </nav>
@@ -712,14 +960,15 @@ final Image? asImage = await DiscData.instance.getImageFromDisc(imageName: 'test
     <div class="foot__rule">
       <span>&copy; <span id="year">2026</span> b012tech.com</span>
       <span class="foot__mark">&mdash; built with dart, coffee &amp; ink</span>
-      <span>Version 2.0.3</span>
+      <span class="foot__version">Version 2.1.0</span>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism-core.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js" integrity="sha512-/Rynaa6ehLZJO9fdk+EUsgiOdJqFSFUB4Qgy+gP4vU4U1DrmPJWypfXe1CgyaV7rRdZjGxdpLe9djxhx1ZHvqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js" integrity="sha512-r/W8eHXvGAyqo0Pa1hwUx9znj2RKBDKgTZ7iL5R4FIJpLpF1HPXKHiGorzKE5gwj906GlNqAskHKSNpyVziozw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js" integrity="sha512-6O/PZimM3TD1NN3yrazePA4AbZrPcwt1QCGJrVY7WoHDJROZFc9TlBvIKMe+QfqgcslW4lQeBzNJEJvIMC8WhA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" integrity="sha512-whYhDwtTmlC/NpZlCr6PSsAaLOrfjVg/iXAnC4H/dtiHawpShhT2SlIMbpIhT/IL/NrpdMm+Hq2C13+VKpHTYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="assets/i18n.js"></script>
   <script src="assets/script.js" defer></script>
 </body>
