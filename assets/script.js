@@ -6,8 +6,14 @@
 (() => {
   'use strict';
 
-  const I18N = window.B012_I18N || { supportedLocales: ['en'], bindings: {}, translations: { en: {} } };
+  // English lives in index.html; i18n.js holds the other locales, plus the
+  // few English strings that are not in the page (copy-button labels).
+  const I18N = window.B012_I18N || { supportedLocales: ['en'], translations: { en: {} } };
   const root = document.documentElement;
+  const textNodes = Array.from(document.querySelectorAll('[data-i18n]'));
+  const attrNodes = Array.from(document.querySelectorAll('[data-i18n-attr]'));
+  const originalText = new Map(textNodes.map((el) => [el, el.tagName === 'TITLE' ? el.textContent : el.innerHTML]));
+  const originalAttrs = new Map(attrNodes.map((el) => [el, parseAttrBindings(el).map(([attr]) => el.getAttribute(attr))]));
   const localeSelect = document.getElementById('locale-select');
   const themeSelect = document.getElementById('theme-select');
   const STORAGE_LOCALE = 'b012_data.locale';
@@ -78,28 +84,27 @@
     return I18N.supportedLocales.includes(base) ? base : 'en';
   }
 
+  // data-i18n-attr="aria-label:navToggle;title:otherKey" → [['aria-label', 'navToggle'], ...]
+  function parseAttrBindings(el) {
+    return el.dataset.i18nAttr.split(';').map((pair) => pair.split(':').map((s) => s.trim()));
+  }
+
   function applyLocale(locale) {
     currentLocale = locale;
-    const messages = getMessages(locale);
-    const bindings = I18N.bindings || {};
+    const table = (locale !== 'en' && I18N.translations?.[locale]) || {};
+    const pick = (key, fallback) => (typeof table[key] === 'string' ? table[key] : fallback);
 
-    Object.entries(bindings).forEach(([key, binding]) => {
-      const el = document.querySelector(binding.selector);
-      if (!el) return;
-      const value = messages[key];
-      if (typeof value !== 'string') return;
-
-      if (binding.type === 'html') {
-        el.innerHTML = value;
-      } else if (binding.type === 'attr') {
-        el.setAttribute(binding.attr, value);
-      } else {
-        el.textContent = value;
-      }
+    textNodes.forEach((el) => {
+      const value = pick(el.dataset.i18n, originalText.get(el));
+      if (el.tagName === 'TITLE') el.textContent = value;
+      else el.innerHTML = value;
+    });
+    attrNodes.forEach((el) => {
+      const fallbacks = originalAttrs.get(el);
+      parseAttrBindings(el).forEach(([attr, key], i) => el.setAttribute(attr, pick(key, fallbacks[i])));
     });
 
-    updatePreferenceLabels(messages);
-    updateCopyLabels(messages);
+    updateCopyLabels(getMessages(locale));
     root.lang = locale === 'zh-Hans' ? 'zh-CN' : locale === 'zh-Hant' ? 'zh-TW' : locale;
     root.dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';
   }
@@ -112,21 +117,6 @@
         const fallback = I18N.translations?.en?.[key];
         return typeof fallback === 'string' ? fallback : '';
       }
-    });
-  }
-
-  function updatePreferenceLabels(messages) {
-    const systemOption = localeSelect?.querySelector('option[value="auto"]');
-    if (systemOption) systemOption.textContent = messages.prefsSystem;
-
-    const themeLabels = {
-      dark: messages.themeDark,
-      light: messages.themeLight,
-      nature: messages.themeNature,
-    };
-    Object.entries(themeLabels).forEach(([value, label]) => {
-      const option = themeSelect?.querySelector(`option[value="${value}"]`);
-      if (option && label) option.textContent = label;
     });
   }
 
