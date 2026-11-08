@@ -1330,12 +1330,12 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 /* ---------- responsive ---------- */
-/* the full top bar (brand, five links, two selectors, two buttons) needs ~1100px in some languages */
+/* the full top bar (brand, five links, two selectors, two buttons) needs ~1200px in German */
 @media (max-width: 1280px) {
   .topbar__inner { gap: 24px; }
   .nav { gap: 20px; }
 }
-@media (max-width: 1120px) {
+@media (max-width: 1200px) {
   .topbar__menu, .topbar__actions .btn--ghost { display: none; }
   .topbar__inner { grid-template-columns: auto 1fr auto; gap: 12px; }
   .topbar__actions { justify-self: end; }
